@@ -1,0 +1,16 @@
+uri,duration_s,proc_time_s,rtf,num_speakers_hyp,peak_rss_mb,timing_note
+nepsim_2spk_01,303.94,89.40,0.2941,2,319,4-threads-not-a-timing-run
+nepsim_2spk_02,303.06,81.71,0.2696,3,319,4-threads-not-a-timing-run
+nepsim_2spk_03,303.55,104.18,0.3432,2,319,4-threads-not-a-timing-run
+nepsim_2spk_04,287.63,122.34,0.4253,2,319,4-threads-not-a-timing-run
+nepsim_2spk_05,298.93,96.52,0.3229,3,319,4-threads-not-a-timing-run
+nepsim_2spk_06,298.96,86.91,0.2907,3,319,4-threads-not-a-timing-run
+nepsim_2spk_07,300.25,123.41,0.4110,2,319,4-threads-not-a-timing-run
+nepsim_2spk_08,298.57,93.76,0.3140,2,319,4-threads-not-a-timing-run
+nepsim_2spk_09,298.88,90.42,0.3026,3,319,4-threads-not-a-timing-run
+nepsim_2spk_10,299.24,75.61,0.2527,3,319,4-threads-not-a-timing-run
+nepsim_3spk_01,302.97,109.39,0.3610,3,319,4-threads-not-a-timing-run
+nepsim_3spk_02,310.23,88.63,0.2857,3,319,4-threads-not-a-timing-run
+nepsim_3spk_03,304.17,136.67,0.4493,3,319,4-threads-not-a-timing-run
+nepsim_3spk_04,294.47,87.95,0.2987,3,319,4-threads-not-a-timing-run
+nepsim_3spk_05,292.69,80.24,0.2741,3,319,4-threads-not-a-timing-run

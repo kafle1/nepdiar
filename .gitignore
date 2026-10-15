@@ -1,0 +1,50 @@
+# envs and models
+.venv*/
+models/
+
+# audio and corpora, fetched or rebuilt locally
+data/ami/
+data/slr54/
+data/demand/
+data/nepali_sim/wav/
+data/nepali_sim/wav_rn/
+data/nepali_sim/wav8k/
+data/nepali_sim/rirs.npz
+data/nepali_sim/release/rirs.npz
+data/nepali_real/*/wav/
+data/nepali_real/*/wav8k/
+data/nepali_real/*/raw_*/
+data/nepali_real/indicvoices/rttm/
+data/nepali_real/indicvoices/uem/
+data/nepali_real/indicvoices/stats.csv
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.opus
+*.sph
+*.parquet
+*.zip
+*.tgz
+*.tar.bz2
+
+# weights and arrays
+*.onnx
+*.npz
+*.npy
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# caches, logs, secrets
+results/cache/
+__pycache__/
+*.pyc
+logs/
+*.log
+*.pid
+.DS_Store
+.env
+.env.*

@@ -1,0 +1,26 @@
+uri,recording_id,dataset_type,source_format,duration_s,speakers,num_speakers_field,segments,speech_s,overlap_s,overlap_ratio,speech_ratio
+nepali_001,nepali_nf_001,Near field,"16000,1 wav,N/A",199.904,6,6,84,178.335,57.459,0.3222,0.8921
+nepali_002,nepali_nf_001,Near field,"16000,1 wav,N/A",212.0,6,6,67,190.741,33.254,0.1743,0.8997
+nepali_003,nepali_nf_001,Near field,"16000,1 wav,N/A",75.266,6,6,26,69.5,21.449,0.3086,0.9234
+nepali_004,nepali_nf_001,Near field,"16000,1 wav,N/A",203.488,6,6,81,196.404,72.792,0.3706,0.9652
+nepali_005,nepali_nf_001,Near field,"16000,1 wav,N/A",206.368,6,6,78,196.646,60.827,0.3093,0.9529
+nepali_006,nepali_nf_001,Near field,"16000,1 wav,N/A",189.632,6,6,64,179.507,32.977,0.1837,0.9466
+nepali_007,nepali_nf_001,Near field,"16000,1 wav,N/A",187.04,6,6,78,174.464,58.462,0.3351,0.9328
+nepali_008,nepali_nf_001,Near field,"16000,1 wav,N/A",198.24,6,6,66,185.704,42.412,0.2284,0.9368
+nepali_009,nepali_nf_001,Near field,"16000,1 wav,N/A",198.112,5,5,50,184.57,37.105,0.201,0.9316
+nepali_010,nepali_nf_001,Near field,"16000,1 wav,N/A",196.384,6,6,83,175.814,40.876,0.2325,0.8953
+nepali_011,nepali_nf_001,Near field,"16000,1 wav,N/A",201.376,6,6,75,184.613,46.111,0.2498,0.9168
+nepali_012,nepali_nf_001,Near field,"16000,1 wav,N/A",199.808,6,6,56,192.756,41.099,0.2132,0.9647
+nepali_013,nepali_nf_002,Near field,"16000,1 wav,N/A",223.232,4,4,56,209.919,44.104,0.2101,0.9404
+nepali_014,nepali_nf_002,Near field,"16000,1 wav,N/A",216.352,4,4,43,211.328,72.989,0.3454,0.9768
+nepali_015,nepali_nf_001,Near field,"16000,1 wav,N/A",196.672,6,6,56,177.178,29.028,0.1638,0.9009
+nepali_016,nepali_nf_001,Near field,"16000,1 wav,N/A",201.694,6,6,53,185.432,31.464,0.1697,0.9194
+nepali_017,nepali_nf_002,Near field,"16000,1 wav,N/A",26.978,3,3,8,26.108,9.74,0.3731,0.9678
+nepali_018,nepali_nf_002,Near field,"16000,1 wav,N/A",209.824,4,4,38,192.388,38.256,0.1988,0.9169
+nepali_019,nepali_nf_002,Near field,"16000,1 wav,N/A",200.992,4,4,42,187.791,22.608,0.1204,0.9343
+nepali_020,nepali_nf_001,Near field,"16000,1 wav,N/A",207.072,6,6,52,193.246,33.794,0.1749,0.9332
+nepali_021,nepali_nf_002,Near field,"16000,1 wav,N/A",198.944,3,3,51,185.299,25.716,0.1388,0.9314
+nepali_022,nepali_nf_002,Near field,"16000,1 wav,N/A",214.88,4,4,48,212.88,40.289,0.1893,0.9907
+nepali_023,nepali_nf_002,Near field,"16000,1 wav,N/A",186.848,5,5,42,162.616,37.452,0.2303,0.8703
+nepali_024,nepali_nf_002,Near field,"16000,1 wav,N/A",177.792,4,4,42,170.466,29.09,0.1706,0.9588
+nepali_025,nepali_nf_002,Near field,"16000,1 wav,N/A",200.158,4,4,44,179.434,15.855,0.0884,0.8965

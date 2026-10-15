@@ -1,0 +1,51 @@
+Data licences
+
+The code in this repo is under the GNU AGPL 3.0 (see LICENSE). The data files below are not
+ours and keep their source's licence. No audio from any corpus is redistributed here.
+
+1. AMI Meeting Corpus
+   Used for: ref/ami/ (reference RTTMs, UEMs, meeting lists), results/raw/ami*/
+   Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+   Source: https://groups.inf.ed.ac.uk/ami/corpus/
+   References and UEMs come from the BUT AMI-diarization-setup repo
+   (https://github.com/BUTSpeechFIT/AMI-diarization-setup, commit
+   2509d8933721023fab4def2618aabd5c28eb82e9). That repo is under the Apache License 2.0,
+   kept as ref/ami/LICENSE-AMI-diarization-setup.
+   Cite: J. Carletta et al., "The AMI Meeting Corpus: A Pre-announcement," in Machine Learning
+   for Multimodal Interaction (MLMI 2005), LNCS 3869, Springer, 2006, pp. 28-39.
+   doi:10.1007/11677482_3
+
+2. OpenSLR 54, Large Nepali ASR training data set
+   Used for: data/nepali_sim/ (NepDiar-Sim manifests, references, checksums), results/raw/nepali_sim*/
+   Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+   Source: https://www.openslr.org/54/
+   NepDiar-Sim is built from this speech, so every NepDiar-Sim file in this repo, and any audio
+   you rebuild with scripts/make_nepali_sim.py, is shared under CC BY-SA 4.0 too.
+   Cite: O. Kjartansson, S. Sarin, K. Pipatsrisawat, M. Jansche and L. Ha, "Crowd-Sourced Speech
+   Corpora for Javanese, Sundanese, Sinhala, Nepali, and Bangladeshi Bengali," in Proc. SLTU 2018,
+   pp. 52-55. doi:10.21437/SLTU.2018-11
+
+3. DEMAND, Diverse Environments Multichannel Acoustic Noise Database
+   Used for: the noise in NepDiar-Sim reverb + noise (data/nepali_sim/manifest_rn.tsv)
+   Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+   Source: https://zenodo.org/records/1227121 (doi:10.5281/zenodo.1227121)
+   Cite: J. Thiemann, N. Ito and E. Vincent, "The Diverse Environments Multi-channel Acoustic
+   Noise Database (DEMAND): A database of multichannel environmental noise recordings," Proc.
+   Meetings on Acoustics 19, 035081 (2013). doi:10.1121/1.4799597
+
+4. Indic DiarBench (Nepali subset)
+   Used for: data/nepali_real/diarbench/, results/raw/indic_diarbench_ne/
+   Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+   Source: https://huggingface.co/datasets/sarvamai/indic-diarbench
+   Cite: D. Mehendale, A. Mehndiratta, D. Rathi, K. Bhogale and M. M. Khapra, "Indic DiarBench:
+   A Multilingual Joint Diarization and ASR Benchmark for Indian Languages," arXiv:2607.23808,
+   to appear at Interspeech 2026.
+
+5. IndicVoices (Nepali)
+   Used for: data/nepali_real/indicvoices/calls.txt (call ids only), results/raw/indicvoices_ne_calls/
+   Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+   Source: https://huggingface.co/datasets/ai4bharat/IndicVoices
+   Reference RTTMs are not shipped; scripts/real_nepali/prep_indicvoices.py rebuilds them from
+   the official release.
+   Cite: T. Javed et al., "IndicVoices: Towards building an Inclusive Multilingual Speech Dataset
+   for Indian Languages," in Findings of ACL 2024, pp. 10740-10782. doi:10.18653/v1/2024.findings-acl.639

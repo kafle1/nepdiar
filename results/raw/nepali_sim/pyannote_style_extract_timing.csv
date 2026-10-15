@@ -1,0 +1,7 @@
+uri,duration_s,proc_time_s,rtf,threads,step_s,peak_rss_mb,timing_note
+nepsim_2spk_01,303.94,164.14,0.5400,4,2.0,523,4-threads-not-a-timing-run
+nepsim_2spk_02,303.06,427.17,1.4095,4,2.0,523,4-threads-not-a-timing-run
+nepsim_2spk_03,303.55,449.44,1.4806,4,2.0,523,4-threads-not-a-timing-run
+nepsim_2spk_04,287.63,251.28,0.8736,4,2.0,523,4-threads-not-a-timing-run
+nepsim_2spk_05,298.93,81.57,0.2729,4,2.0,523,4-threads-not-a-timing-run
+nepsim_2spk_06,298.96,71.16,0.2380,4,2.0,523,4-threads-not-a-timing-run

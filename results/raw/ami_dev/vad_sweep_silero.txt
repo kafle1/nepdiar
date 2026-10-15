@@ -1,0 +1,48 @@
+IS1008a
+IS1008b
+IS1008c
+IS1008d
+ES2011a
+ES2011b
+ES2011c
+ES2011d
+TS3004a
+TS3004b
+TS3004c
+TS3004d
+IB4001
+IB4002
+IB4003
+IB4004
+IB4010
+IB4011
+thr=0.6 pad=0.2 bridge=0.3  miss=0.025 fa=0.052 total=0.077
+thr=0.7 pad=0.2 bridge=0.3  miss=0.036 fa=0.041 total=0.077
+thr=0.5 pad=0.1 bridge=0.3  miss=0.030 fa=0.050 total=0.080
+thr=0.6 pad=0.2 bridge=0.0  miss=0.031 fa=0.049 total=0.080
+thr=0.5 pad=0.2 bridge=0.3  miss=0.017 fa=0.064 total=0.081
+thr=0.6 pad=0.1 bridge=0.3  miss=0.043 fa=0.039 total=0.082
+thr=0.7 pad=0.2 bridge=0.0  miss=0.044 fa=0.038 total=0.082
+thr=0.5 pad=0.2 bridge=0.0  miss=0.021 fa=0.061 total=0.082
+thr=0.4 pad=0.1 bridge=0.3  miss=0.020 fa=0.064 total=0.083
+thr=0.4 pad=0.1 bridge=0.0  miss=0.026 fa=0.060 total=0.086
+thr=0.5 pad=0.1 bridge=0.0  miss=0.039 fa=0.047 total=0.086
+thr=0.4 pad=0.0 bridge=0.3  miss=0.036 fa=0.052 total=0.088
+thr=0.4 pad=0.2 bridge=0.3  miss=0.011 fa=0.077 total=0.088
+thr=0.7 pad=0.1 bridge=0.3  miss=0.061 fa=0.028 total=0.089
+thr=0.4 pad=0.2 bridge=0.0  miss=0.014 fa=0.075 total=0.089
+thr=0.3 pad=0.0 bridge=0.3  miss=0.022 fa=0.069 total=0.091
+thr=0.6 pad=0.1 bridge=0.0  miss=0.055 fa=0.036 total=0.091
+thr=0.3 pad=0.1 bridge=0.0  miss=0.016 fa=0.076 total=0.092
+thr=0.5 pad=0.0 bridge=0.3  miss=0.053 fa=0.039 total=0.092
+thr=0.3 pad=0.1 bridge=0.3  miss=0.012 fa=0.081 total=0.092
+thr=0.3 pad=0.0 bridge=0.0  miss=0.034 fa=0.063 total=0.097
+thr=0.3 pad=0.2 bridge=0.0  miss=0.008 fa=0.092 total=0.101
+thr=0.3 pad=0.2 bridge=0.3  miss=0.007 fa=0.095 total=0.101
+thr=0.7 pad=0.1 bridge=0.0  miss=0.076 fa=0.025 total=0.101
+thr=0.4 pad=0.0 bridge=0.0  miss=0.055 fa=0.047 total=0.102
+thr=0.6 pad=0.0 bridge=0.3  miss=0.075 fa=0.028 total=0.104
+thr=0.5 pad=0.0 bridge=0.0  miss=0.080 fa=0.035 total=0.115
+thr=0.7 pad=0.0 bridge=0.3  miss=0.104 fa=0.019 total=0.123
+thr=0.6 pad=0.0 bridge=0.0  miss=0.113 fa=0.024 total=0.136
+thr=0.7 pad=0.0 bridge=0.0  miss=0.154 fa=0.015 total=0.169

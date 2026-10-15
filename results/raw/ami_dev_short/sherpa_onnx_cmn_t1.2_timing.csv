@@ -1,0 +1,3 @@
+uri,duration_s,proc_time_s,rtf,num_speakers_hyp,peak_rss_mb,timing_note
+IS1008a,943.83,141.26,0.1497,3,799,4-threads-not-a-timing-run
+ES2011a,1113.85,129.23,0.1160,3,1022,4-threads-not-a-timing-run

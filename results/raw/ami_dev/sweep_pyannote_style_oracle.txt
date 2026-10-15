@@ -1,0 +1,139 @@
+18 dev meetings cached: IS1008a IS1008b IS1008c IS1008d ES2011a ES2011b ES2011c ES2011d TS3004a TS3004b TS3004c TS3004d IB4001 IB4002 IB4003 IB4004 IB4010 IB4011
+mcr=0.0 thr=0.5 mcs=6 off=0.0: DER25=0.1997 DER0=0.2426 k-err=0.00
+mcr=0.0 thr=0.5 mcs=6 off=0.1: DER25=0.2001 DER0=0.2433 k-err=0.00
+mcr=0.0 thr=0.5 mcs=6 off=0.3: DER25=0.2009 DER0=0.2450 k-err=0.00
+mcr=0.0 thr=0.5 mcs=12 off=0.0: DER25=0.1382 DER0=0.1823 k-err=0.00
+mcr=0.0 thr=0.5 mcs=12 off=0.1: DER25=0.1384 DER0=0.1828 k-err=0.00
+mcr=0.0 thr=0.5 mcs=12 off=0.3: DER25=0.1389 DER0=0.1839 k-err=0.00
+mcr=0.0 thr=0.5 mcs=24 off=0.0: DER25=0.1262 DER0=0.1711 k-err=0.06
+mcr=0.0 thr=0.5 mcs=24 off=0.1: DER25=0.1265 DER0=0.1716 k-err=0.06
+mcr=0.0 thr=0.5 mcs=24 off=0.3: DER25=0.1269 DER0=0.1727 k-err=0.06
+mcr=0.0 thr=0.5 mcs=48 off=0.0: DER25=0.1261 DER0=0.1710 k-err=0.06
+mcr=0.0 thr=0.5 mcs=48 off=0.1: DER25=0.1263 DER0=0.1715 k-err=0.06
+mcr=0.0 thr=0.5 mcs=48 off=0.3: DER25=0.1267 DER0=0.1726 k-err=0.06
+mcr=0.0 thr=0.6 mcs=6 off=0.0: DER25=0.1542 DER0=0.1988 k-err=0.00
+mcr=0.0 thr=0.6 mcs=6 off=0.1: DER25=0.1545 DER0=0.1993 k-err=0.00
+mcr=0.0 thr=0.6 mcs=6 off=0.3: DER25=0.1551 DER0=0.2006 k-err=0.00
+mcr=0.0 thr=0.6 mcs=12 off=0.0: DER25=0.1311 DER0=0.1755 k-err=0.00
+mcr=0.0 thr=0.6 mcs=12 off=0.1: DER25=0.1314 DER0=0.1760 k-err=0.00
+mcr=0.0 thr=0.6 mcs=12 off=0.3: DER25=0.1318 DER0=0.1771 k-err=0.00
+mcr=0.0 thr=0.6 mcs=24 off=0.0: DER25=0.1262 DER0=0.1710 k-err=0.06
+mcr=0.0 thr=0.6 mcs=24 off=0.1: DER25=0.1264 DER0=0.1716 k-err=0.06
+mcr=0.0 thr=0.6 mcs=24 off=0.3: DER25=0.1268 DER0=0.1726 k-err=0.06
+mcr=0.0 thr=0.6 mcs=48 off=0.0: DER25=0.1262 DER0=0.1711 k-err=0.06
+mcr=0.0 thr=0.6 mcs=48 off=0.1: DER25=0.1264 DER0=0.1716 k-err=0.06
+mcr=0.0 thr=0.6 mcs=48 off=0.3: DER25=0.1268 DER0=0.1727 k-err=0.06
+mcr=0.0 thr=0.7 mcs=6 off=0.0: DER25=0.1618 DER0=0.2052 k-err=0.00
+mcr=0.0 thr=0.7 mcs=6 off=0.1: DER25=0.1620 DER0=0.2058 k-err=0.00
+mcr=0.0 thr=0.7 mcs=6 off=0.3: DER25=0.1627 DER0=0.2072 k-err=0.00
+mcr=0.0 thr=0.7 mcs=12 off=0.0: DER25=0.1341 DER0=0.1785 k-err=0.00
+mcr=0.0 thr=0.7 mcs=12 off=0.1: DER25=0.1344 DER0=0.1790 k-err=0.00
+mcr=0.0 thr=0.7 mcs=12 off=0.3: DER25=0.1348 DER0=0.1801 k-err=0.00
+mcr=0.0 thr=0.7 mcs=24 off=0.0: DER25=0.1261 DER0=0.1710 k-err=0.06
+mcr=0.0 thr=0.7 mcs=24 off=0.1: DER25=0.1263 DER0=0.1715 k-err=0.06
+mcr=0.0 thr=0.7 mcs=24 off=0.3: DER25=0.1267 DER0=0.1726 k-err=0.06
+mcr=0.0 thr=0.7 mcs=48 off=0.0: DER25=0.1262 DER0=0.1710 k-err=0.06
+mcr=0.0 thr=0.7 mcs=48 off=0.1: DER25=0.1264 DER0=0.1716 k-err=0.06
+mcr=0.0 thr=0.7 mcs=48 off=0.3: DER25=0.1268 DER0=0.1727 k-err=0.06
+mcr=0.0 thr=0.8 mcs=6 off=0.0: DER25=0.1870 DER0=0.2288 k-err=0.00
+mcr=0.0 thr=0.8 mcs=6 off=0.1: DER25=0.1872 DER0=0.2294 k-err=0.00
+mcr=0.0 thr=0.8 mcs=6 off=0.3: DER25=0.1879 DER0=0.2308 k-err=0.00
+mcr=0.0 thr=0.8 mcs=12 off=0.0: DER25=0.1560 DER0=0.1990 k-err=0.00
+mcr=0.0 thr=0.8 mcs=12 off=0.1: DER25=0.1563 DER0=0.1996 k-err=0.00
+mcr=0.0 thr=0.8 mcs=12 off=0.3: DER25=0.1569 DER0=0.2010 k-err=0.00
+mcr=0.0 thr=0.8 mcs=24 off=0.0: DER25=0.1293 DER0=0.1741 k-err=0.06
+mcr=0.0 thr=0.8 mcs=24 off=0.1: DER25=0.1295 DER0=0.1747 k-err=0.06
+mcr=0.0 thr=0.8 mcs=24 off=0.3: DER25=0.1299 DER0=0.1758 k-err=0.06
+mcr=0.0 thr=0.8 mcs=48 off=0.0: DER25=0.1263 DER0=0.1712 k-err=0.06
+mcr=0.0 thr=0.8 mcs=48 off=0.1: DER25=0.1265 DER0=0.1717 k-err=0.06
+mcr=0.0 thr=0.8 mcs=48 off=0.3: DER25=0.1269 DER0=0.1729 k-err=0.06
+mcr=0.0 thr=0.9 mcs=6 off=0.0: DER25=0.2126 DER0=0.2533 k-err=0.00
+mcr=0.0 thr=0.9 mcs=6 off=0.1: DER25=0.2129 DER0=0.2539 k-err=0.00
+mcr=0.0 thr=0.9 mcs=6 off=0.3: DER25=0.2137 DER0=0.2555 k-err=0.00
+mcr=0.0 thr=0.9 mcs=12 off=0.0: DER25=0.1592 DER0=0.2020 k-err=0.00
+mcr=0.0 thr=0.9 mcs=12 off=0.1: DER25=0.1595 DER0=0.2025 k-err=0.00
+mcr=0.0 thr=0.9 mcs=12 off=0.3: DER25=0.1601 DER0=0.2039 k-err=0.00
+mcr=0.0 thr=0.9 mcs=24 off=0.0: DER25=0.1292 DER0=0.1741 k-err=0.06
+mcr=0.0 thr=0.9 mcs=24 off=0.1: DER25=0.1295 DER0=0.1746 k-err=0.06
+mcr=0.0 thr=0.9 mcs=24 off=0.3: DER25=0.1299 DER0=0.1758 k-err=0.06
+mcr=0.0 thr=0.9 mcs=48 off=0.0: DER25=0.1262 DER0=0.1710 k-err=0.06
+mcr=0.0 thr=0.9 mcs=48 off=0.1: DER25=0.1264 DER0=0.1716 k-err=0.06
+mcr=0.0 thr=0.9 mcs=48 off=0.3: DER25=0.1268 DER0=0.1727 k-err=0.06
+mcr=0.2 thr=0.5 mcs=6 off=0.0: DER25=0.1745 DER0=0.2182 k-err=0.00
+mcr=0.2 thr=0.5 mcs=6 off=0.1: DER25=0.1748 DER0=0.2188 k-err=0.00
+mcr=0.2 thr=0.5 mcs=6 off=0.3: DER25=0.1755 DER0=0.2202 k-err=0.00
+mcr=0.2 thr=0.5 mcs=12 off=0.0: DER25=0.1366 DER0=0.1808 k-err=0.00
+mcr=0.2 thr=0.5 mcs=12 off=0.1: DER25=0.1369 DER0=0.1814 k-err=0.00
+mcr=0.2 thr=0.5 mcs=12 off=0.3: DER25=0.1373 DER0=0.1825 k-err=0.00
+mcr=0.2 thr=0.5 mcs=24 off=0.0: DER25=0.1262 DER0=0.1712 k-err=0.06
+mcr=0.2 thr=0.5 mcs=24 off=0.1: DER25=0.1265 DER0=0.1717 k-err=0.06
+mcr=0.2 thr=0.5 mcs=24 off=0.3: DER25=0.1268 DER0=0.1728 k-err=0.06
+mcr=0.2 thr=0.5 mcs=48 off=0.0: DER25=0.1280 DER0=0.1728 k-err=0.11
+mcr=0.2 thr=0.5 mcs=48 off=0.1: DER25=0.1283 DER0=0.1733 k-err=0.11
+mcr=0.2 thr=0.5 mcs=48 off=0.3: DER25=0.1287 DER0=0.1745 k-err=0.11
+mcr=0.2 thr=0.6 mcs=6 off=0.0: DER25=0.1352 DER0=0.1798 k-err=0.00
+mcr=0.2 thr=0.6 mcs=6 off=0.1: DER25=0.1354 DER0=0.1803 k-err=0.00
+mcr=0.2 thr=0.6 mcs=6 off=0.3: DER25=0.1359 DER0=0.1816 k-err=0.00
+mcr=0.2 thr=0.6 mcs=12 off=0.0: DER25=0.1302 DER0=0.1746 k-err=0.00
+mcr=0.2 thr=0.6 mcs=12 off=0.1: DER25=0.1304 DER0=0.1752 k-err=0.00
+mcr=0.2 thr=0.6 mcs=12 off=0.3: DER25=0.1308 DER0=0.1763 k-err=0.00
+mcr=0.2 thr=0.6 mcs=24 off=0.0: DER25=0.1259 DER0=0.1709 k-err=0.06
+mcr=0.2 thr=0.6 mcs=24 off=0.1: DER25=0.1262 DER0=0.1714 k-err=0.06
+mcr=0.2 thr=0.6 mcs=24 off=0.3: DER25=0.1266 DER0=0.1726 k-err=0.06
+mcr=0.2 thr=0.6 mcs=48 off=0.0: DER25=0.1279 DER0=0.1727 k-err=0.11
+mcr=0.2 thr=0.6 mcs=48 off=0.1: DER25=0.1281 DER0=0.1732 k-err=0.11
+mcr=0.2 thr=0.6 mcs=48 off=0.3: DER25=0.1285 DER0=0.1744 k-err=0.11
+mcr=0.2 thr=0.7 mcs=6 off=0.0: DER25=0.1432 DER0=0.1877 k-err=0.00
+mcr=0.2 thr=0.7 mcs=6 off=0.1: DER25=0.1435 DER0=0.1882 k-err=0.00
+mcr=0.2 thr=0.7 mcs=6 off=0.3: DER25=0.1440 DER0=0.1895 k-err=0.00
+mcr=0.2 thr=0.7 mcs=12 off=0.0: DER25=0.1302 DER0=0.1746 k-err=0.00
+mcr=0.2 thr=0.7 mcs=12 off=0.1: DER25=0.1304 DER0=0.1751 k-err=0.00
+mcr=0.2 thr=0.7 mcs=12 off=0.3: DER25=0.1308 DER0=0.1763 k-err=0.00
+mcr=0.2 thr=0.7 mcs=24 off=0.0: DER25=0.1259 DER0=0.1709 k-err=0.06
+mcr=0.2 thr=0.7 mcs=24 off=0.1: DER25=0.1262 DER0=0.1714 k-err=0.06
+mcr=0.2 thr=0.7 mcs=24 off=0.3: DER25=0.1266 DER0=0.1726 k-err=0.06
+mcr=0.2 thr=0.7 mcs=48 off=0.0: DER25=0.1279 DER0=0.1726 k-err=0.11
+mcr=0.2 thr=0.7 mcs=48 off=0.1: DER25=0.1281 DER0=0.1732 k-err=0.11
+mcr=0.2 thr=0.7 mcs=48 off=0.3: DER25=0.1286 DER0=0.1744 k-err=0.11
+mcr=0.2 thr=0.8 mcs=6 off=0.0: DER25=0.1497 DER0=0.1942 k-err=0.00
+mcr=0.2 thr=0.8 mcs=6 off=0.1: DER25=0.1500 DER0=0.1947 k-err=0.00
+mcr=0.2 thr=0.8 mcs=6 off=0.3: DER25=0.1506 DER0=0.1960 k-err=0.00
+mcr=0.2 thr=0.8 mcs=12 off=0.0: DER25=0.1391 DER0=0.1832 k-err=0.00
+mcr=0.2 thr=0.8 mcs=12 off=0.1: DER25=0.1393 DER0=0.1837 k-err=0.00
+mcr=0.2 thr=0.8 mcs=12 off=0.3: DER25=0.1399 DER0=0.1850 k-err=0.00
+mcr=0.2 thr=0.8 mcs=24 off=0.0: DER25=0.1260 DER0=0.1709 k-err=0.06
+mcr=0.2 thr=0.8 mcs=24 off=0.1: DER25=0.1262 DER0=0.1714 k-err=0.06
+mcr=0.2 thr=0.8 mcs=24 off=0.3: DER25=0.1266 DER0=0.1726 k-err=0.06
+mcr=0.2 thr=0.8 mcs=48 off=0.0: DER25=0.1279 DER0=0.1727 k-err=0.11
+mcr=0.2 thr=0.8 mcs=48 off=0.1: DER25=0.1281 DER0=0.1732 k-err=0.11
+mcr=0.2 thr=0.8 mcs=48 off=0.3: DER25=0.1286 DER0=0.1744 k-err=0.11
+mcr=0.2 thr=0.9 mcs=6 off=0.0: DER25=0.1679 DER0=0.2118 k-err=0.00
+mcr=0.2 thr=0.9 mcs=6 off=0.1: DER25=0.1682 DER0=0.2123 k-err=0.00
+mcr=0.2 thr=0.9 mcs=6 off=0.3: DER25=0.1689 DER0=0.2137 k-err=0.00
+mcr=0.2 thr=0.9 mcs=12 off=0.0: DER25=0.1391 DER0=0.1832 k-err=0.00
+mcr=0.2 thr=0.9 mcs=12 off=0.1: DER25=0.1393 DER0=0.1837 k-err=0.00
+mcr=0.2 thr=0.9 mcs=12 off=0.3: DER25=0.1398 DER0=0.1850 k-err=0.00
+mcr=0.2 thr=0.9 mcs=24 off=0.0: DER25=0.1259 DER0=0.1709 k-err=0.06
+mcr=0.2 thr=0.9 mcs=24 off=0.1: DER25=0.1262 DER0=0.1714 k-err=0.06
+mcr=0.2 thr=0.9 mcs=24 off=0.3: DER25=0.1266 DER0=0.1726 k-err=0.06
+mcr=0.2 thr=0.9 mcs=48 off=0.0: DER25=0.1279 DER0=0.1726 k-err=0.11
+mcr=0.2 thr=0.9 mcs=48 off=0.1: DER25=0.1281 DER0=0.1732 k-err=0.11
+mcr=0.2 thr=0.9 mcs=48 off=0.3: DER25=0.1286 DER0=0.1744 k-err=0.11
+
+sorted by DER at collar 0.25 (corpus level)
+DER25   DER0    miss   fa     conf   mcr  thr   mcs off  |k err| per-meeting k - true
+0.1259 0.1709 0.0521 0.0329 0.0410 0.2  0.7   24  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1259 0.1709 0.0521 0.0329 0.0410 0.2  0.9   24  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1259 0.1709 0.0521 0.0329 0.0410 0.2  0.6   24  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1260 0.1709 0.0521 0.0329 0.0410 0.2  0.8   24  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1261 0.1710 0.0521 0.0329 0.0411 0.0  0.5   48  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1261 0.1710 0.0521 0.0329 0.0411 0.0  0.7   24  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1710 0.0521 0.0329 0.0412 0.0  0.7   48  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1710 0.0521 0.0329 0.0412 0.0  0.6   24  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1711 0.0521 0.0329 0.0412 0.0  0.6   48  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1710 0.0521 0.0329 0.0412 0.0  0.9   48  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1714 0.0517 0.0338 0.0406 0.2  0.7   24  0.1  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1714 0.0517 0.0338 0.0407 0.2  0.6   24  0.1  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1714 0.0517 0.0338 0.0407 0.2  0.9   24  0.1  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1714 0.0517 0.0338 0.0407 0.2  0.8   24  0.1  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+0.1262 0.1712 0.0521 0.0329 0.0413 0.2  0.5   24  0.0  0.06  [0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

@@ -1,0 +1,17 @@
+uri,duration_s,proc_time_s,rtf,num_speakers_hyp,peak_rss_mb,timing_note
+IS1009a,838.83,78.16,0.0932,4,285,oracle-k-under-load
+IS1009b,2052.33,241.42,0.1176,4,652,oracle-k-under-load
+IS1009c,1820.83,186.87,0.1026,4,803,oracle-k-under-load
+IS1009d,1944.50,185.57,0.0954,4,831,oracle-k-under-load
+ES2004a,1049.35,82.57,0.0787,4,831,oracle-k-under-load
+ES2004b,2345.49,222.81,0.0950,4,831,oracle-k-under-load
+ES2004c,2334.37,239.85,0.1027,4,953,oracle-k-under-load
+ES2004d,2222.29,188.51,0.0848,4,953,oracle-k-under-load
+TS3003a,1505.64,87.26,0.0580,4,953,oracle-k-under-load
+TS3003b,2210.30,172.40,0.0780,4,953,oracle-k-under-load
+TS3003c,2570.00,225.83,0.0879,4,953,oracle-k-under-load
+TS3003d,2618.20,242.17,0.0925,4,953,oracle-k-under-load
+EN2002a,2142.71,344.32,0.1607,4,953,oracle-k-under-load
+EN2002b,1786.85,259.65,0.1453,4,953,oracle-k-under-load
+EN2002c,2972.26,618.43,0.2081,3,1045,oracle-k-under-load
+EN2002d,2209.90,391.39,0.1771,4,1045,oracle-k-under-load

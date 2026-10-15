@@ -1,0 +1,12 @@
+uri,duration_s,proc_time_s,rtf,num_speakers_hyp,peak_rss_mb,timing_note
+IS1008a,943.83,173.48,0.1838,6,832,4-threads-not-a-timing-run
+IS1008b,1768.50,329.70,0.1864,11,832,4-threads-not-a-timing-run
+IS1008c,1546.33,290.45,0.1878,9,1264,4-threads-not-a-timing-run
+IS1008d,1480.83,276.10,0.1864,9,1335,4-threads-not-a-timing-run
+ES2011a,1113.85,174.76,0.1569,56,1335,4-threads-not-a-timing-run
+ES2011b,1581.27,282.77,0.1788,48,1479,4-threads-not-a-timing-run
+ES2011c,1616.06,279.76,0.1731,50,1638,4-threads-not-a-timing-run
+ES2011d,1982.33,321.40,0.1621,85,1872,4-threads-not-a-timing-run
+TS3004a,1345.32,191.04,0.1420,105,1872,4-threads-not-a-timing-run
+TS3004b,2246.06,999.00,0.4448,118,2094,4-threads-not-a-timing-run
+TS3004c,2970.00,5063.36,1.7048,116,2094,4-threads-not-a-timing-run

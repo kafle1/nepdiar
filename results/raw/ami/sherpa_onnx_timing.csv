@@ -1,0 +1,17 @@
+uri,duration_s,proc_time_s,rtf,num_speakers_hyp,peak_rss_mb,timing_note
+IS1009a,838.83,100.95,0.1203,8,757,4-threads-not-a-timing-run
+IS1009b,2052.33,300.48,0.1464,8,1495,4-threads-not-a-timing-run
+IS1009c,1820.83,272.28,0.1495,9,1580,4-threads-not-a-timing-run
+IS1009d,1944.50,289.51,0.1489,9,1580,4-threads-not-a-timing-run
+ES2004a,1049.35,140.95,0.1343,7,1580,4-threads-not-a-timing-run
+ES2004b,2345.49,421.83,0.1798,9,1580,4-threads-not-a-timing-run
+ES2004c,2334.37,361.84,0.1550,11,1673,4-threads-not-a-timing-run
+ES2004d,2222.29,314.81,0.1417,12,1673,4-threads-not-a-timing-run
+TS3003a,1505.64,191.86,0.1274,9,1673,4-threads-not-a-timing-run
+TS3003b,2210.30,354.98,0.1606,9,1673,4-threads-not-a-timing-run
+TS3003c,2570.00,328.97,0.1280,9,1941,4-threads-not-a-timing-run
+TS3003d,2618.20,313.11,0.1196,16,2117,4-threads-not-a-timing-run
+EN2002a,2142.71,302.30,0.1411,15,2117,4-threads-not-a-timing-run
+EN2002b,1786.85,222.63,0.1246,13,2117,4-threads-not-a-timing-run
+EN2002c,2972.26,413.79,0.1392,15,2117,4-threads-not-a-timing-run
+EN2002d,2209.90,319.22,0.1445,17,2117,4-threads-not-a-timing-run

@@ -1,0 +1,28 @@
+{
+ "candidates": 461,
+ "checked": 461,
+ "utterances": 37213,
+ "utterances_unusable_short_clipped_or_wrong_rate": 1586,
+ "utterance_outliers": 226,
+ "utterance_outlier_rate": 0.006343503522609257,
+ "split_half_same_cos_median": 0.9816456437110901,
+ "split_half_same_cos_p5": 0.9679633975028992,
+ "cross_centroid_cos_median": 0.19345545768737793,
+ "cross_centroid_cos_p999": 0.6373223066329956,
+ "cross_centroid_cos_max": 0.8947533369064331,
+ "dropped_outlier_frac": 5,
+ "dropped_two_groups": 12,
+ "dropped_looks_like_other_id": 0,
+ "dropped_doubtful_total": 14,
+ "dropped_too_little_speech": 262,
+ "kept": 185,
+ "thresholds": {
+  "outlier_frac_max": 0.1,
+  "split_min_share": 0.25,
+  "same_person_cos": 0.9679633975028992,
+  "min_speaker_speech_s": 150,
+  "min_utt_speech_ms": 1000,
+  "min_files": 50
+ },
+ "outlier_frac_per_speaker_median": 0.0
+}

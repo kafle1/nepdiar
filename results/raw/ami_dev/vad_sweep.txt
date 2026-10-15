@@ -1,0 +1,12 @@
+aggr=3 pad=0.2  miss=0.057 fa=0.066 total=0.124
+aggr=2 pad=0.1  miss=0.048 fa=0.085 total=0.132
+aggr=1 pad=0.0  miss=0.080 fa=0.066 total=0.145
+aggr=0 pad=0.0  miss=0.070 fa=0.076 total=0.146
+aggr=3 pad=0.1  miss=0.108 fa=0.039 total=0.147
+aggr=2 pad=0.2  miss=0.020 fa=0.127 total=0.147
+aggr=1 pad=0.1  miss=0.029 fa=0.126 total=0.155
+aggr=0 pad=0.1  miss=0.025 fa=0.140 total=0.165
+aggr=2 pad=0.0  miss=0.128 fa=0.038 total=0.167
+aggr=1 pad=0.2  miss=0.012 fa=0.157 total=0.169
+aggr=0 pad=0.2  miss=0.010 fa=0.171 total=0.181
+aggr=3 pad=0.0  miss=0.306 fa=0.015 total=0.320

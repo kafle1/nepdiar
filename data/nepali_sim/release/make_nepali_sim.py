@@ -222,7 +222,8 @@ def speaker_tracks(uri, spks, total_ms, rows, za):
     ramp = np.linspace(0, 1, fade)
     cache = {}
     for r in rows:
-        fid, a, b, s = r["slr54_file_id"], int(r["src_start_ms"]), int(r["src_end_ms"]), int(r["placed_start_ms"])
+        fid = r["slr54_file_id"] if "slr54_file_id" in r else r["librispeech_id"]  # english twin uses librispeech
+        a, b, s = int(r["src_start_ms"]), int(r["src_end_ms"]), int(r["placed_start_ms"])
         if fid not in cache:
             cache[fid] = za.read(fid)
         x = cache[fid][a * SR // 1000: b * SR // 1000].astype(np.float64) * float(r["gain"])
@@ -313,9 +314,9 @@ def plan(out):
           f"overlap/speech {ov / sp:.3f}, silence {1 - sp / tot:.3f}")
 
 
-def render_clean(out, slr_zips):
-    """Clean condition from placement.tsv: sum of the dry speaker tracks plus -80 dBFS dither."""
-    za = ZipAudio(slr_zips)
+def render_clean(out, za):
+    """Clean condition from placement.tsv: sum of the dry speaker tracks plus -80 dBFS dither.
+    za: anything with read(file_id) -> float32 16 kHz mono."""
     conv = conversations(out)
     place_rows = read_tsv(out / "placement.tsv")
     (out / "wav").mkdir(parents=True, exist_ok=True)
@@ -391,11 +392,10 @@ def rooms(out):
     write_tsv(out / "manifest_rn.tsv", rows)
 
 
-def render_rn(out, slr_zips, demand_zips):
+def render_rn(out, za, demand_zips):
     """Reverb + noise condition: each dry speaker track convolved with its room response, summed,
     then DEMAND noise scaled so speech power (over reference speech) / noise power = the SNR."""
     from scipy.signal import fftconvolve
-    za = ZipAudio(slr_zips)
     conv = conversations(out)
     place_rows = read_tsv(out / "placement.tsv")
     man = {r["uri"]: r for r in read_tsv(out / "manifest_rn.tsv")}
@@ -442,11 +442,11 @@ def main():
     elif a.stage == "plan":
         plan(a.out)
     elif a.stage == "render_clean":
-        render_clean(a.out, a.slr_zips)
+        render_clean(a.out, ZipAudio(a.slr_zips))
     elif a.stage == "rooms":
         rooms(a.out)
     else:
-        render_rn(a.out, a.slr_zips, a.demand_zips)
+        render_rn(a.out, ZipAudio(a.slr_zips), a.demand_zips)
 
 
 if __name__ == "__main__":

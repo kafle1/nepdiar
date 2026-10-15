@@ -1,11 +1,13 @@
-conversation files with a wav: 134, calls 98, both sides 36, one side only 62
-kept calls 36, hours 1.987, by source {'raw_v1_train': 35, 'raw_v2_valid': 1}
-sample rates {8000: 36}
+conversation files with a wav: 684, calls 483, both sides 201, one side only 282
+kept calls 201, hours 10.800, by source {'raw_v1_train': 200, 'raw_v2_valid': 1}
+sample rates {8000: 201}
 side length difference: max |diff| 0.000 s
-speech 1.724 h (0.868 of audio), overlap 11.71 min, overlap ratio 0.1133
-energy check, median over sides: in-vs-out 67.2 dB, best lag 0.00 s, other-side leak -68.7 dB (own solo speech = 0)
-exact-zero samples, median over sides: inside segments 0.077, outside 0.702
-lag histogram: {0.0: 18, -0.01: 15, -0.02: 13, 0.01: 12, 0.02: 5, -0.03: 4, 0.03: 2, -0.06: 1}
-verification decisions: {'excellent': 72}
-distinct speaker ids 61 over 72 sides
-problems (0):
+speech 9.276 h (0.859 of audio), overlap 61.29 min, overlap ratio 0.1101
+energy check, median over sides: in-vs-out 64.8 dB, best lag 0.00 s, other-side leak -65.7 dB (own solo speech = 0)
+exact-zero samples, median over sides: inside segments 0.068, outside 0.661
+lag histogram: {0.0: 90, -0.01: 85, 0.01: 70, -0.02: 68, -0.03: 27, 0.02: 27, -0.04: 12, 0.03: 11}
+verification decisions: {'excellent': 402}
+distinct speaker ids 216 over 402 sides
+problems (2):
+44d9ab4b-660f-44d4-bfca-88cfe42b7dcd_0: segment speaker ids ['0', '1'] on one side
+a660a78f-2375-453f-b838-8f0a78029e37_1: 1 segments negative, empty or past the end, e.g. [(193.406, 197.406)]

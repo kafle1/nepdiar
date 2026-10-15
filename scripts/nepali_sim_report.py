@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Pooled DER (same as corpus_der.py) on the simulated Nepali set, overall and per speaker count,
 plus the per-recording mean with the same bootstrap as summarise.py. Reads the score.py CSVs for the
-means, recomputes pooled DER from the RTTMs. Writes results/summary_nepali_sim_by_count.csv."""
+means, recomputes pooled DER from the RTTMs. Writes results/summary_nepali_sim_by_count.csv.
+Pass `english` to do the same for the English twin (data/english_sim, results/summary_english_sim_by_count.csv)."""
 import csv
 import sys
 from pathlib import Path
@@ -13,7 +14,8 @@ from common import ROOT
 from score import load_annotation, load_uem
 from summarise import bootstrap_ci
 
-SIM = ROOT / "data/nepali_sim"
+NAME = sys.argv[1] if len(sys.argv) > 1 else "nepali"
+SIM = ROOT / f"data/{NAME}_sim"
 SYSTEMS = ["pyannote_style", "pyannote_style_oracle", "pyannote31", "pyannote31_oracle", "sherpa_onnx",
            "sherpa_onnx_oracle", "wespeaker_spectral", "wespeaker_spectral_oracle", "wespeaker_spectral_silero",
            "wespeaker_spectral_silero_oracle", "community1", "community1_oracle"]
@@ -21,7 +23,7 @@ uris = [u.strip() for u in (SIM / "conversations.txt").read_text().splitlines() 
 nspk = {u: int(u.split("_")[1][0]) for u in uris}
 groups = {"all": uris, **{f"{n}spk": [u for u in uris if nspk[u] == n] for n in (2, 3, 4)}}
 out_rows = []
-for ds in ("nepali_sim", "nepali_sim_rn"):
+for ds in (f"{NAME}_sim", f"{NAME}_sim_rn"):
     for g, gu in groups.items():
         print(f"\n[{ds}] {g}: pooled over {len(gu)} conversations; mean of per-conversation DER with 95% bootstrap CI")
         print(f"{'system':34} {'DER0':>6} {'miss':>6} {'fa':>6} {'conf':>6} {'DER25':>6}  {'mean DER0 [CI]':>24} {'mean DER25 [CI]':>24} {'JER':>6} {'k ok':>5}")
@@ -55,7 +57,7 @@ for ds in ("nepali_sim", "nepali_sim_rn"):
                              "mean_jer": f"{jer[0]:.4f}", "jer_ci_lo": f"{jer[1]:.4f}", "jer_ci_hi": f"{jer[2]:.4f}",
                              "speaker_count_right": kok})
 if out_rows:
-    with open(ROOT / "results/summary_nepali_sim_by_count.csv", "w", newline="") as f:
+    with open(ROOT / f"results/summary_{NAME}_sim_by_count.csv", "w", newline="") as f:
         w = csv.DictWriter(f, list(out_rows[0]))
         w.writeheader()
         w.writerows(out_rows)

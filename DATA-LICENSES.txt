@@ -26,7 +26,8 @@ ours and keep their source's licence. No audio from any corpus is redistributed 
    pp. 52-55. doi:10.21437/SLTU.2018-11
 
 3. DEMAND, Diverse Environments Multichannel Acoustic Noise Database
-   Used for: the noise in NepDiar-Sim reverb + noise (data/nepali_sim/manifest_rn.tsv)
+   Used for: the noise in the reverb + noise condition of NepDiar-Sim and the English twin
+   (data/nepali_sim/manifest_rn.tsv, data/english_sim/manifest_rn.tsv)
    Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
    Source: https://zenodo.org/records/1227121 (doi:10.5281/zenodo.1227121)
    Cite: J. Thiemann, N. Ito and E. Vincent, "The Diverse Environments Multi-channel Acoustic
@@ -42,10 +43,19 @@ ours and keep their source's licence. No audio from any corpus is redistributed 
    to appear at Interspeech 2026.
 
 5. IndicVoices (Nepali)
-   Used for: data/nepali_real/indicvoices/calls.txt (call ids only), results/raw/indicvoices_ne_calls/
+   Used for: data/nepali_real/indicvoices/calls.txt (call ids), data/indicvoices_ne_calls/,
+   results/raw/indicvoices_ne_calls/
    Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
    Source: https://huggingface.co/datasets/ai4bharat/IndicVoices
-   Reference RTTMs are not shipped; scripts/real_nepali/prep_indicvoices.py rebuilds them from
-   the official release.
+   data/indicvoices_ne_calls/ holds two-party references we derived from the transcription
+   segments (merged per side, speakers relabelled A and B, no speaker ids). They are shared under
+   CC BY 4.0. scripts/real_nepali/prep_indicvoices.py rebuilds them from the official release.
    Cite: T. Javed et al., "IndicVoices: Towards building an Inclusive Multilingual Speech Dataset
    for Indian Languages," in Findings of ACL 2024, pp. 10740-10782. doi:10.18653/v1/2024.findings-acl.639
+
+6. LibriSpeech (dev-clean and test-clean)
+   Used for: data/english_sim/ (English twin manifests, references, checksums), results/raw/english_sim*/
+   Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+   Source: https://www.openslr.org/12/
+   Cite: V. Panayotov, G. Chen, D. Povey and S. Khudanpur, "LibriSpeech: an ASR corpus based on
+   public domain audio books," in Proc. ICASSP 2015, pp. 5206-5210. doi:10.1109/ICASSP.2015.7178964

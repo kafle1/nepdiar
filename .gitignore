@@ -11,6 +11,10 @@ data/nepali_sim/wav_rn/
 data/nepali_sim/wav8k/
 data/nepali_sim/rirs.npz
 data/nepali_sim/release/rirs.npz
+data/librispeech/
+data/english_sim/wav/
+data/english_sim/wav_rn/
+data/english_sim/rirs.npz
 data/nepali_real/*/wav/
 data/nepali_real/*/wav8k/
 data/nepali_real/*/raw_*/

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code or the NepDiar-Sim build files, please cite them as below."
+title: "NepDiar: zero-shot open-source speaker diarization on Nepali, benchmark code and NepDiar-Sim"
+authors:
+  - family-names: Kafle
+    given-names: Niraj
+    orcid: "https://orcid.org/0009-0009-4412-3874"
+    affiliation: "Independent researcher, Kathmandu, Nepal"
+repository-code: "https://github.com/kafle1/nepdiar"
+license: AGPL-3.0-only
+keywords:
+  - speaker diarization
+  - Nepali
+  - less-resourced languages
+  - benchmark
+  - simulated conversations

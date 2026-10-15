@@ -11,7 +11,9 @@
    outliers, when its utterances split into two sizeable groups that look like two people, or when its
    centroid looks like another ID's centroid. Thresholds are printed and written to summary.json.
 
-usage: nice -n 10 .venv/bin/python scripts/check_nepali_speakers.py [--workers 6]
+usage: nice -n 10 .venv/bin/python scripts/check_nepali_speakers.py [--workers 6] [--emb wespeaker|campplus]
+--emb campplus repeats the check with a second, unrelated embedder (3D-Speaker CAM++, VoxCeleb) into
+data/nepali_sim/speaker_check_campplus, to see whether the drops depend on the ResNet34.
 """
 import argparse
 import csv
@@ -34,6 +36,7 @@ from run_wespeaker_spectral import EMB_MODEL, Embedder
 SR = 16000
 SLR = ROOT / "data/slr54"
 OUT = ROOT / "data/nepali_sim/speaker_check"
+CAMPPLUS = ROOT / "models/campplus/3dspeaker_speech_campplus_sv_en_voxceleb_16k.onnx"
 MIN_FILES = 50  # files a speaker needs in the downloaded parts to be a candidate
 MIN_UTT_SPEECH_MS = 1000
 MIN_SPEAKER_SPEECH_S = 150  # a 2-speaker conversation needs about 130 s from each
@@ -68,9 +71,24 @@ def trim(x):
     return [[max(0, a - 20), min(total_ms, b + 20)] for a, b in merged if b - a >= 200]
 
 
+class CamPlus:
+    def __init__(self):
+        import sherpa_onnx
+        self.ext = sherpa_onnx.SpeakerEmbeddingExtractor(
+            sherpa_onnx.SpeakerEmbeddingExtractorConfig(model=str(CAMPPLUS), num_threads=1))
+        self.dim = self.ext.dim
+
+    def __call__(self, x):
+        s = self.ext.create_stream()
+        s.accept_waveform(SR, x)
+        s.input_finished()
+        return np.array(self.ext.compute(s), dtype=np.float32)
+
+
 def work(job):
-    spk, items = job  # items: (file_id, zip name, member)
-    emb = Embedder(EMB_MODEL)
+    spk, items, which = job  # items: (file_id, zip name, member)
+    emb = CamPlus() if which == "campplus" else Embedder(EMB_MODEL)
+    dim = emb.dim if which == "campplus" else 256
     zips, rows, vecs = {}, [], []
     for fid, zname, member in items:
         zf = zips.setdefault(zname, zipfile.ZipFile(SLR / "zips" / zname))
@@ -85,7 +103,7 @@ def work(job):
         rows.append({"file_id": fid, "speaker": spk, "sr": sr, "file_ms": len(x) * 1000 // sr, "speech_ms": sp_ms,
                      "regions_ms": json.dumps(regs), "gain": 10 ** (LEVEL_DBFS / 20) / rms if rms > 0 else 0.0,
                      "clipped_frac": clipped, "has_emb": int(v is not None)})
-        vecs.append(v if v is not None else np.zeros(256, np.float32))
+        vecs.append(v if v is not None else np.zeros(dim, np.float32))
     return rows, np.stack(vecs)
 
 
@@ -96,7 +114,11 @@ def unit(v):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--emb", choices=["wespeaker", "campplus"], default="wespeaker")
     args = ap.parse_args()
+    global OUT
+    if args.emb == "campplus":
+        OUT = OUT.with_name("speaker_check_campplus")
     OUT.mkdir(parents=True, exist_ok=True)
 
     where = {}
@@ -120,7 +142,7 @@ def main():
     else:
         rows, embs = [], []
         with Pool(args.workers) as pool:
-            for i, (r, e) in enumerate(pool.imap(work, [(s, sorted(by_spk[s])) for s in cands])):
+            for i, (r, e) in enumerate(pool.imap(work, [(s, sorted(by_spk[s]), args.emb) for s in cands])):
                 rows += r
                 embs.append(e)
                 if i % 25 == 0:

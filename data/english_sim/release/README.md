@@ -6,11 +6,12 @@ The twin exists to ask one question: does a diarization system do worse on Nepal
 
 No audio is shipped here. You rebuild it from LibriSpeech and DEMAND with the manifests, and the rebuild is bit-exact (compare with `wav_sha256/`).
 
-## Licences
+## Licence
+
+This release (manifests, references, room responses and checksums) is CC BY-SA 4.0, the same as NepDiar-Sim, because it reuses NepDiar-Sim's room responses, noise plan and timing. The code is AGPL-3.0 in the repository. The sources keep their own licences:
 
 - LibriSpeech (OpenSLR 12), CC BY 4.0. Panayotov, Chen, Povey and Khudanpur, "LibriSpeech: an ASR corpus based on public domain audio books", ICASSP 2015.
 - DEMAND, CC BY 4.0. Thiemann, Ito and Vincent, Zenodo record 1227121.
-- The manifests, references and scripts in this folder: CC BY 4.0.
 
 ## Files
 
@@ -50,12 +51,22 @@ python make_english_sim.py render_rn --out . --libri /path/to/librispeech_folder
 
 ## How close the twin is
 
-From the reference RTTMs, means over the 30 conversations (the reverb + noise condition uses the same references, so its numbers are identical):
+From the reference RTTMs, pooled over the 30 conversations, with the definitions of the NepDiar paper's turn table (`paper/analysis/turn_stats_table.py`): segments sorted by start, back-to-back segments of one speaker merged into a turn, and a speaker change counted each time a new turn starts, per minute of speech (not of audio). The reverb + noise condition uses the same references, so its numbers are identical.
 
-| | speech share | overlap share of speech | speaker changes per min | segments per min | mean segment (s) |
-|---|---|---|---|---|---|
-| NepDiar-Sim | 0.6655 | 0.2008 | 18.66 | 27.81 | 1.754 |
-| English twin | 0.6681 | 0.2018 | 18.39 | 27.57 | 1.777 |
+| | speech % | overlap % | speaker changes per speech min | median segment (s) | segments under 1 s | median turn (s) |
+|---|---|---|---|---|---|---|
+| NepDiar-Sim | 66.5 | 20.3 | 28.0 | 1.69 | 10.1% | 2.03 |
+| English twin | 66.8 | 20.4 | 27.6 | 1.72 | 10.5% | 2.07 |
+
+`results/sim_twin_stats.csv` in the repository also has per-conversation means, with changes and segments per minute of audio.
+
+## Datasheet
+
+- Version 1.0, 2026-10-16. Report errors as GitHub issues on the NepDiar repository; fixes get a new version number and a changelog line here.
+- Source: LibriSpeech dev-clean and test-clean (40 speakers each, 80 in all), CC BY 4.0. No other English speech is used.
+- Speaker sex is set by design, from LibriSpeech `SPEAKERS.TXT`: 2-speaker conversations get 1 female + 1 male, 4-speaker ones 2 + 2, and 3-speaker ones 2 female + 1 male in odd-numbered conversations (`_01`, `_03`, ...) and 1 female + 2 male in even ones. Slots: 45 female, 45 male.
+- 70 of the 80 speakers are used. 20 of them appear in two conversations each (never twice in one), so twin conversations are not fully independent. The repository's pair test resamples them in linked groups as a sensitivity check.
+- The WeSpeaker speaker check used to clean OpenSLR 54 was not applied to the LibriSpeech speakers. LibriSpeech speaker labels are taken as given; only clipping (0.1% or more clipped samples, 3 utterances) and the energy trim filter anything.
 
 ## Limits
 

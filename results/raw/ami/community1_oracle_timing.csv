@@ -1,0 +1,17 @@
+uri,duration_s,proc_time_s,rtf,num_speakers_hyp,peak_rss_mb,timing_note
+IS1009a,838.83,47.99,0.0572,4,1354,oracle-k-mps-under-cpu-load
+IS1009b,2052.33,118.58,0.0578,4,1355,oracle-k-mps-under-cpu-load
+IS1009c,1820.83,105.14,0.0577,4,1355,oracle-k-mps-under-cpu-load
+IS1009d,1944.50,112.04,0.0576,4,1355,oracle-k-mps-under-cpu-load
+ES2004a,1049.35,59.62,0.0568,4,1355,oracle-k-mps-under-cpu-load
+ES2004b,2345.49,133.10,0.0567,4,1355,oracle-k-mps-under-cpu-load
+ES2004c,2334.37,133.18,0.0571,4,1355,oracle-k-mps-under-cpu-load
+ES2004d,2222.29,131.24,0.0591,4,1355,oracle-k-mps-under-cpu-load
+TS3003a,1505.64,87.24,0.0579,4,1355,oracle-k-mps-under-cpu-load
+TS3003b,2210.30,128.70,0.0582,4,1355,oracle-k-mps-under-cpu-load
+TS3003c,2570.00,149.00,0.0580,4,1355,oracle-k-mps-under-cpu-load
+TS3003d,2618.20,151.06,0.0577,4,1355,oracle-k-mps-under-cpu-load
+EN2002a,2142.71,126.46,0.0590,4,1355,oracle-k-mps-under-cpu-load
+EN2002b,1786.85,100.57,0.0563,4,1355,oracle-k-mps-under-cpu-load
+EN2002c,2972.26,177.38,0.0597,3,1355,oracle-k-mps-under-cpu-load
+EN2002d,2209.90,138.09,0.0625,4,1355,oracle-k-mps-under-cpu-load

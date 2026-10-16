@@ -23,7 +23,7 @@ run() {
   local name=$1 free
   shift
   free=$(df -k / | awk 'NR==2 {print $4}')
-  if [ "$free" -lt 20971520 ]; then
+  if [ "$free" -lt 12582912 ]; then  # 12 GB: runs write little, the floor guards against swap growth
     echo "=== STOP before $name: only $((free / 1048576)) GB free ==="
     exit 1
   fi

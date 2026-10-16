@@ -1,0 +1,17 @@
+part,condition,config,system,nepali_miss_no_collar_pct,nepali_miss_collar_pct,nepali_miss_kept_by_collar_share,english_miss_no_collar_pct,english_miss_collar_pct,english_miss_kept_by_collar_share,lang,miss_edge_s,miss_deep_s,miss_edge_share,miss_deep_share,miss_edge125_share,ref_edge_share,ref_speech_s,pooled_miss_pct,miss_rate_edge_pct,miss_rate_deep_pct
+collar,clean,S1,sherpa_onnx,14.44,9.78,0.677,3.94,2.13,0.541,,,,,,,,,,,
+collar,clean,S2a,wespeaker_spectral,18.19,15.84,0.871,17.73,15.63,0.882,,,,,,,,,,,
+collar,clean,S2b,wespeaker_spectral_silero,21.26,18.07,0.85,17.91,15.7,0.877,,,,,,,,,,,
+collar,clean,S3,pyannote_style,15.83,10.85,0.685,4.13,2.26,0.547,,,,,,,,,,,
+collar,clean,S4,pyannote31,15.72,10.69,0.68,4.09,2.21,0.54,,,,,,,,,,,
+collar,clean,S5,community1,15.72,10.69,0.68,4.09,2.22,0.543,,,,,,,,,,,
+collar,reverb_noise,S1,sherpa_onnx,15.25,10.78,0.707,6.85,4.76,0.695,,,,,,,,,,,
+collar,reverb_noise,S2a,wespeaker_spectral,18.77,16.24,0.865,17.77,15.65,0.881,,,,,,,,,,,
+collar,reverb_noise,S2b,wespeaker_spectral_silero,20.49,17.6,0.859,17.85,15.67,0.878,,,,,,,,,,,
+collar,reverb_noise,S3,pyannote_style,18.17,13.47,0.741,7.36,5.2,0.707,,,,,,,,,,,
+collar,reverb_noise,S4,pyannote31,16.36,11.64,0.711,7.23,5.07,0.701,,,,,,,,,,,
+collar,reverb_noise,S5,community1,16.36,11.64,0.711,7.23,5.07,0.701,,,,,,,,,,,
+location,clean,S3,pyannote_style,,,,,,,nepali,888.2,278.5,0.761,0.239,0.454,0.421,7311.7,15.96,28.85,6.58
+location,clean,S3,pyannote_style,,,,,,,english,268.8,48.7,0.847,0.153,0.57,0.421,7411.0,4.28,8.61,1.13
+location,clean,S4,pyannote31,,,,,,,nepali,887.4,271.4,0.766,0.234,0.458,0.421,7311.7,15.85,28.83,6.41
+location,clean,S4,pyannote31,,,,,,,english,266.8,47.5,0.849,0.151,0.573,0.421,7411.0,4.24,8.54,1.11

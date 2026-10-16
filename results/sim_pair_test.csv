@@ -1,0 +1,13 @@
+system,config,condition,family,n_pairs,mean_der_nepali,mean_der_english,mean_diff,ci_lo,ci_hi,p_raw,reading_2pt,group_ci_lo,group_ci_hi,n_groups,group_reading_2pt,signflip_p,p_holm,holm_family_size
+sherpa_onnx,S1,clean,primary,30,0.2978,0.2287,0.0692,0.0295,0.1084,0.0012,outside,0.026,0.1164,10,outside,0.0026,0.0036,6
+wespeaker_spectral,S2,clean,primary,30,0.3512,0.3427,0.0085,-0.0179,0.0418,0.6328,crosses,-0.0318,0.016,10,crosses,0.6551,0.6792,6
+wespeaker_spectral_silero,S2b,clean,primary,30,0.3355,0.3231,0.0124,-0.0095,0.0404,0.3396,crosses,-0.0326,0.0212,10,crosses,0.4252,0.6792,6
+pyannote_style,S3,clean,primary,30,0.3075,0.1884,0.1191,0.0775,0.1646,0.0,outside,0.0724,0.1676,10,outside,0.0001,0.0,6
+pyannote31,S4,clean,primary,30,0.3123,0.1744,0.1379,0.0956,0.1835,0.0,outside,0.08,0.1811,10,outside,0.0001,0.0,6
+community1,S5,clean,primary,30,0.2736,0.1761,0.0975,0.0715,0.124,0.0,outside,0.0694,0.1093,10,outside,0.0001,0.0,6
+sherpa_onnx,S1,reverb_noise,secondary,30,0.3363,0.2864,0.0499,0.0111,0.0893,0.0134,crosses,-0.0418,0.0722,10,crosses,0.0226,0.0402,6
+wespeaker_spectral,S2,reverb_noise,secondary,30,0.3962,0.3926,0.0036,-0.0116,0.0185,0.6324,inside,-0.0381,0.014,10,crosses,0.6579,0.6324,6
+wespeaker_spectral_silero,S2b,reverb_noise,secondary,30,0.3559,0.3748,-0.0189,-0.0365,0.0005,0.0572,crosses,-0.0502,-0.0106,10,crosses,0.0577,0.1144,6
+pyannote_style,S3,reverb_noise,secondary,30,0.4067,0.2586,0.1481,0.0899,0.2089,0.0,outside,0.1163,0.2759,10,outside,0.0002,0.0,6
+pyannote31,S4,reverb_noise,secondary,30,0.3477,0.23,0.1177,0.076,0.1629,0.0,outside,0.0966,0.194,10,outside,0.0001,0.0,6
+community1,S5,reverb_noise,secondary,30,0.2902,0.2203,0.0699,0.0353,0.1049,0.0,outside,0.0252,0.1206,10,outside,0.0005,0.0,6

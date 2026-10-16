@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """How close the English twin is to NepDiar-Sim, from the reference RTTMs: speech share of the
-conversation, overlap share of speech, speaker changes per minute (time-sorted segments whose speaker
-differs from the one before), segments per minute and mean segment length. AMI test is printed with the same code for scale.
+conversation, overlap share of speech, speaker changes and segments per minute of audio (time-sorted segments
+whose speaker differs from the one before), mean segment length, plus the paper's pooled per-speech-minute table numbers. AMI test is printed with the same code for scale.
 The reverb + noise condition reuses the clean references, so its row is the same by construction.
 Writes results/sim_twin_stats.csv."""
 import csv
@@ -54,7 +54,7 @@ sets = {"nepali": [ROOT / "data/nepali_sim/rttm" / f"{u}.rttm" for u in order],
 res = {k: stats(v, sim_uem) for k, v in sets.items()}
 ami_dir = ROOT / "ref/ami/only_words/rttms/test"
 ami = stats(sorted(ami_dir.glob("*.rttm")), lambda p, _: uem(ROOT / "ref/ami/uems/test" / f"{p.stem}.uem"))
-names = ["speech_share", "overlap_share_of_speech", "speaker_changes_per_min", "segments_per_min", "mean_segment_s"]
+names = ["speech_share", "overlap_share_of_speech", "speaker_changes_per_audio_min", "segments_per_audio_min", "mean_segment_s"]
 print(f"{'set':10} {'cond':13} " + " ".join(f"{n:>24}" for n in names))
 for cond in ("clean", "reverb_noise"):
     for k in ("nepali", "english"):
@@ -67,7 +67,17 @@ print("per-pair nepali minus english, mean [min, max]: " + "; ".join(
 m = ami.mean(axis=0)
 rows.append({"set": "ami_test_ref", "condition": "real", "n": len(ami), **{n: round(float(v), 4) for n, v in zip(names, m)}})
 print(f"{'ami test':10} {'uem':13} " + " ".join(f"{v:24.4f}" for v in m))
+# the paper's table definition (paper/analysis/turn_stats_table.py, imported read-only): pooled, per minute of speech
+sys.path.insert(0, str(ROOT / "paper/analysis"))
+from turn_stats_table import measure
+for k, d in (("nepali", "nepali_sim"), ("english", "english_sim")):
+    m = measure(k, k, ROOT / f"data/{d}/rttm", ROOT / f"data/{d}/uem", ROOT / f"data/{d}/conversations.txt", "")
+    print(f"{k}: changes per speech min {m['changes_per_speech_min']}, speech {m['speech_pct']}%, overlap {m['overlap_pct']}%, "
+          f"median segment {m['median_segment_s']} s, under 1 s {m['segments_under_1s_pct']}%, median turn {m['median_turn_s']} s")
+    for r in rows:
+        if r["set"] == k:
+            r.update({x: m[x] for x in ("changes_per_speech_min", "speech_pct", "overlap_pct", "median_segment_s", "segments_under_1s_pct", "median_turn_s")})
 with open(ROOT / "results/sim_twin_stats.csv", "w", newline="") as f:
-    w = csv.DictWriter(f, list(rows[0]))
+    w = csv.DictWriter(f, list(rows[0]), restval="")
     w.writeheader()
     w.writerows(rows)

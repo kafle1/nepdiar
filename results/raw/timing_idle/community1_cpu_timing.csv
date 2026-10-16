@@ -1,0 +1,4 @@
+uri,duration_s,proc_time_s,rtf,num_speakers_hyp,peak_rss_mb,timing_note
+IS1009a,838.83,1548.57,1.8461,4,2942,"idle 1 thread, load 4.14 at start"
+ES2004a,1049.35,1544.06,1.4714,5,2942,"idle 1 thread, load 4.14 at start"
+TS3003a,1505.64,2502.64,1.6622,4,3001,"idle 1 thread, load 4.14 at start"

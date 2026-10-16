@@ -1,0 +1,31 @@
+uri,n_speakers,nepali_speakers,nepali_f0,nepali_mix,twin_mix,match,uncertain_speakers,match_robust_to_uncertain,same_sex_per_slot
+nepsim_2spk_01,2,c652e d863b,157 231,1F1M,1F1M,exact,1,0,2
+nepsim_2spk_02,2,c2858 7fda9,187 130,1F1M,1F1M,exact,0,1,0
+nepsim_2spk_03,2,f6cb7 d26e5,141 179,1F1M,1F1M,exact,0,1,0
+nepsim_2spk_04,2,62ba7 c536c,231 127,1F1M,1F1M,exact,0,1,0
+nepsim_2spk_05,2,31a35 2846f,117 220,1F1M,1F1M,exact,0,1,2
+nepsim_2spk_06,2,45ef4 555eb,135 154,0F2M,1F1M,same_sex,1,0,1
+nepsim_2spk_07,2,2a5b1 8dfc8,139 146,0F2M,1F1M,same_sex,0,1,1
+nepsim_2spk_08,2,a5f51 8f426,229 240,2F0M,1F1M,same_sex,0,1,1
+nepsim_2spk_09,2,7070f 79c24,264 156,1F1M,1F1M,exact,1,0,0
+nepsim_2spk_10,2,7e781 92003,192 147,1F1M,1F1M,exact,0,1,2
+nepsim_3spk_01,3,885af 22333 5b437,146 227 259,2F1M,2F1M,exact,0,1,1
+nepsim_3spk_02,3,5bc3b 5f3b4 d4e86,249 186 192,3F0M,1F2M,same_sex,0,1,1
+nepsim_3spk_03,3,efa9c 88901 e4714,146 236 231,2F1M,2F1M,exact,0,1,3
+nepsim_3spk_04,3,8570d 4714f 882ce,244 118 277,2F1M,1F2M,mixed_diff,0,1,0
+nepsim_3spk_05,3,1a5c1 6fcfb c06a7,256 113 122,1F2M,2F1M,mixed_diff,0,1,0
+nepsim_3spk_06,3,f7bfe 9cc50 d8cef,134 107 140,0F3M,1F2M,same_sex,0,1,2
+nepsim_3spk_07,3,ce4af f0b26 b4e60,234 128 179,2F1M,2F1M,exact,0,1,3
+nepsim_3spk_08,3,e2039 0cc60 93f47,269 109 168,2F1M,1F2M,mixed_diff,1,0,0
+nepsim_3spk_09,3,581da 6fa0e c7f90,136 170 266,2F1M,2F1M,exact,0,1,3
+nepsim_3spk_10,3,d514c 07179 e64b6,163 247 207,3F0M,1F2M,same_sex,1,0,1
+nepsim_4spk_01,4,ef9b4 deca4 43655 53027,152 168 173 150,2F2M,2F2M,exact,2,0,2
+nepsim_4spk_02,4,5d09c f0c93 056c7 59e9e,158 127 214 146,1F3M,2F2M,mixed_diff,1,0,1
+nepsim_4spk_03,4,bc051 e7c22 b365e f7175,173 248 225 281,4F0M,2F2M,same_sex,0,1,2
+nepsim_4spk_04,4,5e6be 421cb 6ee13 27e93,125 231 280 118,2F2M,2F2M,exact,0,1,2
+nepsim_4spk_05,4,07f55 e8f71 6d3c6 58428,313 148 225 137,2F2M,2F2M,exact,0,1,2
+nepsim_4spk_06,4,44345 39b91 9ef53 ee687,131 224 253 152,2F2M,2F2M,exact,1,0,2
+nepsim_4spk_07,4,61821 d03c8 737fb 4dccf,223 127 192 137,2F2M,2F2M,exact,0,1,2
+nepsim_4spk_08,4,8b798 f73cc 42be7 1f680,233 139 234 163,3F1M,2F2M,mixed_diff,1,0,1
+nepsim_4spk_09,4,4170b 363a2 1ff03 ef6a0,234 242 156 142,2F2M,2F2M,exact,1,0,2
+nepsim_4spk_10,4,a3cce d241a 9cd73 14763,157 157 143 134,0F4M,2F2M,same_sex,2,0,2

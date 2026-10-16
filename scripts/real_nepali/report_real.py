@@ -16,12 +16,16 @@ from score import load_annotation, load_uem  # noqa: E402
 from summarise import bootstrap_ci  # noqa: E402
 
 NB = 10000
+# calls whose A-B overlap-vs-lag dip exceeds anything seen on in-sync recordings (sync_tight_iv.py)
+UNCERTAIN_SYNC = {"0567e43d-0fc2-4a77-be64-ed73f905fa99", "1fca12e8-6d74-4d28-b8da-e1ae4a050bef",
+                  "3a87e195-ad44-44d1-813f-a803c244473d", "4af13f83-fe70-40c2-a6d8-592f76031ca2"}
 SYSTEMS = ["pyannote_style", "pyannote_style_oracle", "pyannote31", "pyannote31_oracle", "sherpa_onnx",
            "sherpa_onnx_oracle", "wespeaker_spectral_silero", "wespeaker_spectral_silero_oracle",
            "wespeaker_spectral", "wespeaker_spectral_oracle", "community1", "community1_oracle"]
 SETS = {
     "indic_diarbench_ne": (ROOT / "data/nepali_real/diarbench", "clips.txt"),
     "indicvoices_ne_calls": (ROOT / "data/nepali_real/indicvoices", "calls.txt"),
+    "indicvoices_ne_calls_tight": (ROOT / "data/nepali_real/indicvoices", "calls.txt"),
     "ami_test": (ROOT / "ref/ami", "test.meetings.txt"),
 }
 
@@ -30,13 +34,14 @@ def paths(ds, s, u):
     if ds == "ami_test":
         return (ROOT / "ref/ami/only_words/rttms/test" / f"{u}.rttm", ROOT / "ref/ami/uems/test" / f"{u}.uem",
                 ROOT / "results/raw/ami" / f"{s}_rttm" / f"{u}.rttm")
-    d = SETS[ds][0]
-    return d / "rttm" / f"{u}.rttm", d / "uem" / f"{u}.uem", ROOT / "results/raw" / ds / f"{s}_rttm" / f"{u}.rttm"
+    d, tight = SETS[ds][0], ds.endswith("_tight")
+    return (d / ("rttm_tight" if tight else "rttm") / f"{u}.rttm", d / "uem" / f"{u}.uem",
+            ROOT / "results/raw" / ds.removesuffix("_tight") / f"{s}_rttm" / f"{u}.rttm")
 
 
 def rtf(ds, s):
     """audio-weighted RTF from the run's timing csv (System 3 adds its extract stage; cluster is tiny)."""
-    base = ROOT / "results/raw" / ("ami" if ds == "ami_test" else ds)
+    base = ROOT / "results/raw" / ("ami" if ds == "ami_test" else ds.removesuffix("_tight"))
     f = base / ("pyannote_style_extract_timing.csv" if s.startswith("pyannote_style") else f"{s}_timing.csv")
     if not f.exists():
         return "", ""
@@ -133,7 +138,9 @@ def main():
                 print(f"[{ds}] source recording {rec}: {len(ru)} clips, {dur / 60:.1f} min, overlap share "
                       f"{ov / sp:.4f} of speech, speakers per clip "
                       f"{', '.join(f'{k}: {sum(nspk[u] == k for u in ru)}' for k in sorted({nspk[u] for u in ru}))}")
-        clusters = iv_clusters(d, uris) if ds == "indicvoices_ne_calls" else None
+        if ds == "indicvoices_ne_calls":
+            groups["excl_4_uncertain_sync"] = [u for u in uris if u not in UNCERTAIN_SYNC]
+        clusters = iv_clusters(d, uris) if ds.startswith("indicvoices") else None
         if clusters:
             print(f"[{ds}] {len(set(clusters))} clusters of calls linked by a shared speaker id, "
                   f"sizes {sorted(clusters.count(c) for c in set(clusters))}")

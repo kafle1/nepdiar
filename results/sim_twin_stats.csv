@@ -1,0 +1,6 @@
+set,condition,n,speech_share,overlap_share_of_speech,speaker_changes_per_audio_min,segments_per_audio_min,mean_segment_s,changes_per_speech_min,speech_pct,overlap_pct,median_segment_s,segments_under_1s_pct,median_turn_s
+nepali,clean,30,0.6655,0.2008,18.6572,27.8086,1.7541,28.0,66.5,20.3,1.69,10.1,2.03
+english,clean,30,0.6681,0.2018,18.392,27.5737,1.7769,27.6,66.8,20.4,1.72,10.5,2.07
+nepali,reverb_noise,30,0.6655,0.2008,18.6572,27.8086,1.7541,28.0,66.5,20.3,1.69,10.1,2.03
+english,reverb_noise,30,0.6681,0.2018,18.392,27.5737,1.7769,27.6,66.8,20.4,1.72,10.5,2.07
+ami_test_ref,real,16,0.7975,0.1396,10.5784,13.7968,4.1803,,,,,,

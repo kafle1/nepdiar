@@ -1,0 +1,78 @@
+
+ami_test community1, 16 files
+  pooled: DER0 0.1707 miss 0.0952 fa 0.0358 conf 0.0396 DER25 0.1312
+  mean der_no_collar: 0.1693  95% CI 2k [0.1497, 0.1864]  10k [0.1502, 0.1875]
+  mean der_collar_0.25: 0.1295  95% CI 2k [0.1102, 0.1468]  10k [0.1108, 0.1481]
+  mean jer: 0.2218  95% CI 2k [0.1841, 0.2599]  10k [0.1846, 0.2597]
+  speaker count right on 12/16, mean |hyp - ref| 0.25
+
+ami_test community1_oracle, 16 files
+  pooled: DER0 0.1680 miss 0.0952 fa 0.0358 conf 0.0370 DER25 0.1291
+  mean der_no_collar: 0.1666  95% CI 2k [0.1462, 0.1844]  10k [0.1466, 0.1858]
+  mean der_collar_0.25: 0.1275  95% CI 2k [0.1076, 0.1455]  10k [0.1079, 0.1467]
+  mean jer: 0.2200  95% CI 2k [0.1818, 0.2589]  10k [0.1823, 0.2582]
+  speaker count right on 16/16, mean |hyp - ref| 0.00
+
+indic_diarbench_ne community1, 25 files
+  pooled: DER0 0.3169 miss 0.1682 fa 0.0190 conf 0.1298 DER25 0.2757
+  mean der_no_collar: 0.3170  95% CI 2k [0.2914, 0.3450]  10k [0.2914, 0.3452]
+  mean der_collar_0.25: 0.2767  95% CI 2k [0.2511, 0.3055]  10k [0.2513, 0.3053]
+  mean jer: 0.5167  95% CI 2k [0.4738, 0.5590]  10k [0.4738, 0.5592]
+  speaker count right on 5/25, mean |hyp - ref| 1.16
+
+indic_diarbench_ne community1_oracle, 25 files
+  pooled: DER0 0.3634 miss 0.1682 fa 0.0190 conf 0.1763 DER25 0.3244
+  mean der_no_collar: 0.3698  95% CI 2k [0.3302, 0.4110]  10k [0.3307, 0.4105]
+  mean der_collar_0.25: 0.3320  95% CI 2k [0.2909, 0.3748]  10k [0.2914, 0.3747]
+  mean jer: 0.5136  95% CI 2k [0.4658, 0.5636]  10k [0.4640, 0.5619]
+  speaker count right on 25/25, mean |hyp - ref| 0.00
+
+indicvoices_ne_calls community1, 92 files
+  pooled: DER0 0.2099 miss 0.1329 fa 0.0198 conf 0.0571 DER25 0.1828
+  mean der_no_collar: 0.2194  95% CI 2k [0.1962, 0.2425]  10k [0.1971, 0.2435]
+  mean der_collar_0.25: 0.1930  95% CI 2k [0.1691, 0.2167]  10k [0.1701, 0.2177]
+  mean jer: 0.2708  95% CI 2k [0.2339, 0.3074]  10k [0.2362, 0.3082]
+  speaker count right on 90/92, mean |hyp - ref| 0.02
+
+indicvoices_ne_calls community1_oracle, 92 files
+  pooled: DER0 0.1903 miss 0.1329 fa 0.0198 conf 0.0375 DER25 0.1624
+  mean der_no_collar: 0.1990  95% CI 2k [0.1831, 0.2163]  10k [0.1830, 0.2161]
+  mean der_collar_0.25: 0.1716  95% CI 2k [0.1558, 0.1887]  10k [0.1557, 0.1889]
+  mean jer: 0.2313  95% CI 2k [0.2095, 0.2544]  10k [0.2098, 0.2546]
+  speaker count right on 92/92, mean |hyp - ref| 0.00
+
+nepali_sim community1, 30 files
+  pooled: DER0 0.2800 miss 0.1585 fa 0.0072 conf 0.1143 DER25 0.2246
+  mean der_no_collar: 0.2736  95% CI 2k [0.2390, 0.3079]  10k [0.2397, 0.3087]
+  mean der_collar_0.25: 0.2202  95% CI 2k [0.1851, 0.2555]  10k [0.1857, 0.2565]
+  mean jer: 0.3368  95% CI 2k [0.2880, 0.3848]  10k [0.2894, 0.3865]
+  speaker count right on 25/30, mean |hyp - ref| 0.17
+
+nepali_sim community1_oracle, 30 files
+  pooled: DER0 0.2677 miss 0.1585 fa 0.0072 conf 0.1020 DER25 0.2106
+  mean der_no_collar: 0.2625  95% CI 2k [0.2329, 0.2940]  10k [0.2333, 0.2939]
+  mean der_collar_0.25: 0.2072  95% CI 2k [0.1777, 0.2391]  10k [0.1780, 0.2391]
+  mean jer: 0.3193  95% CI 2k [0.2787, 0.3617]  10k [0.2797, 0.3607]
+  speaker count right on 30/30, mean |hyp - ref| 0.00
+
+nepali_sim_rn community1, 30 files
+  pooled: DER0 0.2958 miss 0.1653 fa 0.0190 conf 0.1115 DER25 0.2358
+  mean der_no_collar: 0.2902  95% CI 2k [0.2587, 0.3232]  10k [0.2582, 0.3220]
+  mean der_collar_0.25: 0.2316  95% CI 2k [0.1988, 0.2663]  10k [0.1985, 0.2650]
+  mean jer: 0.3484  95% CI 2k [0.3046, 0.3949]  10k [0.3035, 0.3936]
+  speaker count right on 27/30, mean |hyp - ref| 0.10
+
+nepali_sim_rn community1_oracle, 30 files
+  pooled: DER0 0.2861 miss 0.1653 fa 0.0190 conf 0.1018 DER25 0.2251
+  mean der_no_collar: 0.2817  95% CI 2k [0.2533, 0.3102]  10k [0.2529, 0.3097]
+  mean der_collar_0.25: 0.2221  95% CI 2k [0.1930, 0.2522]  10k [0.1927, 0.2515]
+  mean jer: 0.3356  95% CI 2k [0.2955, 0.3753]  10k [0.2955, 0.3746]
+  speaker count right on 30/30, mean |hyp - ref| 0.00
+
+AMI paired per meeting, 10,000 resamples, seed 0 (negative = community-1 better)
+  community-1 minus System 3, der_no_collar: -0.0035 [-0.0093, +0.0020], community-1 better on 10/16
+  community-1 minus System 3, der_collar_0.25: -0.0033 [-0.0083, +0.0013], community-1 better on 9/16
+  community-1 minus pyannote 3.1, der_no_collar: -0.0137 [-0.0247, -0.0042], community-1 better on 11/16
+  community-1 minus pyannote 3.1, der_collar_0.25: -0.0123 [-0.0231, -0.0030], community-1 better on 11/16
+  method check, System 3 minus 3.1 (NOTES has -0.010 [-0.021, -0.0001] / -0.009 [-0.020, +0.001]), der_no_collar: -0.0102 [-0.0214, -0.0001], better on 11/16
+  method check, System 3 minus 3.1 (NOTES has -0.010 [-0.021, -0.0001] / -0.009 [-0.020, +0.001]), der_collar_0.25: -0.0090 [-0.0198, +0.0006], better on 10/16

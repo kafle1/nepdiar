@@ -1,2 +1,17 @@
 uri,duration_s,proc_time_s,rtf,num_speakers_hyp,peak_rss_mb,timing_note
 IS1009a,838.83,176.44,0.2103,4,549,mps-under-cpu-load
+IS1009b,2052.33,146.88,0.0716,5,788,mps-under-cpu-load
+IS1009c,1820.83,123.60,0.0679,4,844,mps-under-cpu-load
+IS1009d,1944.50,137.64,0.0708,4,844,mps-under-cpu-load
+ES2004a,1049.35,76.38,0.0728,5,844,mps-under-cpu-load
+ES2004b,2345.49,161.13,0.0687,5,867,mps-under-cpu-load
+ES2004c,2334.37,144.80,0.0620,5,867,mps-under-cpu-load
+ES2004d,2222.29,155.77,0.0701,4,867,mps-under-cpu-load
+TS3003a,1505.64,108.56,0.0721,4,867,mps-under-cpu-load
+TS3003b,2210.30,124.62,0.0564,4,940,mps-under-cpu-load
+TS3003c,2570.00,147.68,0.0575,4,940,mps-under-cpu-load
+TS3003d,2618.20,149.48,0.0571,4,940,mps-under-cpu-load
+EN2002a,2142.71,123.18,0.0575,4,940,mps-under-cpu-load
+EN2002b,1786.85,101.02,0.0565,4,940,mps-under-cpu-load
+EN2002c,2972.26,171.90,0.0578,3,940,mps-under-cpu-load
+EN2002d,2209.90,128.61,0.0582,4,940,mps-under-cpu-load

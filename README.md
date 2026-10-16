@@ -242,7 +242,8 @@ licence, listed with citations in `DATA-LICENSES.txt`:
 - Indic DiarBench references: CC BY 4.0.
 - IndicVoices call references (`data/indicvoices_ne_calls/`): CC BY 4.0, like IndicVoices.
 - NepDiar-Sim manifests, references and checksums: derived from OpenSLR 54, so CC BY-SA 4.0.
-- English twin manifests, references and checksums: derived from LibriSpeech and DEMAND, CC BY 4.0.
+- English twin manifests, references and checksums: LibriSpeech voices (CC BY 4.0) on NepDiar-Sim's
+  rooms, noise plan and timing, so CC BY-SA 4.0 like NepDiar-Sim.
 - System output RTTMs and scores on each set follow that set's licence.
 
 The audio itself is not redistributed. Get it from the official sources above under their terms.

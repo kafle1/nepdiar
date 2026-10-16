@@ -1,0 +1,4 @@
+reading,pool,checked,utterances,utterance_outliers,same_person_cos,split_half_median,cross_median,cross_max,dropped_outlier_frac,dropped_two_groups,dropped_looks_like,dropped_doubtful,dropped_little_speech,kept,used_speakers_dropped,used_dropped_ids
+all80_own,80,80,5297,4,0.9807,0.9909,0.114,0.6605,0,2,0,2,0,78,1,2277
+used70_own,70,70,4751,3,0.9805,0.9902,0.1138,0.6605,0,1,0,1,0,69,1,2277
+all80_nepthr,80,80,5297,4,0.968,0.9909,0.114,0.6605,0,2,0,2,0,78,1,2277

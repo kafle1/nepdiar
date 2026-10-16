@@ -15,9 +15,12 @@ settings picked on AMI dev and nothing changed, are scored on Nepali:
 
 Scoring is DER and JER from `pyannote.metrics`, with no collar and with a 0.25 s collar, overlap
 scored, inside each set's UEM. We report pooled DER and per-recording means with 95% bootstrap
-intervals. The main test, fixed before any Nepali table was made, is the paired DER difference
+intervals. The main test, committed in `ANALYSIS_PLAN.md` (commit ea7664f) before any simulated set was scored, is the paired DER difference
 between each NepDiar-Sim conversation and its English twin, per configuration, with a 10,000-resample
 bootstrap and Holm's correction (`scripts/sim_pair_test.py`).
+
+Archived on Zenodo at https://doi.org/10.5281/zenodo.23412010 (this DOI always points to the latest
+version). To cite it, use `CITATION.cff`.
 
 ## Systems
 
@@ -52,7 +55,9 @@ scripts/get_models.sh
 
 `scripts/get_models.sh` downloads the segmentation, embedding and Silero VAD ONNX files from the
 sherpa-onnx releases, checks their sha256, and writes the two derived copies (the CMN-flagged
-embedding model for S1, and the frame-output model plus numpy head for S3).
+embedding model for S1, and the frame-output model plus numpy head for S3). It installs
+`onnx==1.23.2` into `.venv` for that step if it is missing, and skips any file already present
+with the right hash.
 
 S4 and S5 are gated on Hugging Face. Accept the terms on the model pages for
 `pyannote/speaker-diarization-3.1`, `pyannote/segmentation-3.0` and
@@ -113,9 +118,11 @@ with its own README.
    `OOFFICE_16k.zip`, `OHALLWAY_16k.zip` from https://zenodo.org/records/1227121 in
    `data/demand/zips/`. Do not unzip them. Check all nine from the repo root with
    `shasum -a 256 -c data/nepali_sim/sources.sha256`.
-2. Make the room impulse responses. They are not shipped; this stage remakes `rirs.npz` (and an
-   identical `manifest_rn.tsv`) from fixed seeds:
-   `.venv-sim/bin/python scripts/make_nepali_sim.py rooms`
+2. Put the room impulse responses in place. They ship in the release folder, and they are the ones
+   the published checksums were made with:
+   `cp data/nepali_sim/release/rirs.npz data/nepali_sim/rirs.npz`
+   The `rooms` stage remakes them (and an identical `manifest_rn.tsv`) from fixed seeds with
+   pyroomacoustics 0.10.1: `.venv-sim/bin/python scripts/make_nepali_sim.py rooms`
 3. Render both conditions:
    ```
    .venv/bin/python scripts/make_nepali_sim.py render_clean
@@ -228,6 +235,8 @@ scripts/score_english_sim.sh                # results/summary_english_sim.csv, r
   per-recording scores. `results/raw/**/*_timing.csv`: run times. `results/summary*.csv`,
   `results/corpus_der_*.txt`: the tables. `results/raw/ami_dev*`: dev tuning runs and sweeps.
 - `paper/make_tables.py`: builds the LaTeX tables from `results/`.
+- `paper/analysis/`: the small scripts behind single numbers in the paper (the turn statistics
+  table, transcript tag counts, AMI paired comparisons), each with its output beside it.
 
 Embedding caches from S3 (`results/cache/`) are left out, they are large and rebuilt by the
 `extract` step.

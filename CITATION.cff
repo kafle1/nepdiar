@@ -14,5 +14,6 @@ keywords:
   - less-resourced languages
   - benchmark
   - simulated conversations
-version: "1.0.0"
+version: "1.0.1"
+doi: "10.5281/zenodo.23412010"
 date-released: "2026-10-16"

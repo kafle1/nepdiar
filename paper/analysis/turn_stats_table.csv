@@ -1,0 +1,6 @@
+set,label,recordings,audio_h,channel,speakers_min,speakers_max,distinct_speakers,speech_pct,overlap_pct,median_segment_s,segments_under_1s_pct,median_turn_s,changes_per_speech_min
+ami,AMI test,16,9.06,"headset mix, 16 kHz",3,4,16,80.4,14.6,1.38,43.3,2.51,13.1
+diarbench,"Indic DiarBench, Nepali",25,1.31,"meeting stream, 16 kHz mono",3,6,not given,93.1,22.1,1.60,38.9,2.56,15.4
+indicvoices,IndicVoices calls,92,5.07,"phone, 8 kHz",2,2,184,85.0,11.0,2.08,32.8,4.42,12.9
+nepdiar_sim,NepDiar-Sim,30,2.50,"read speech, 16 kHz",2,4,90,66.5,20.3,1.69,10.1,2.03,28.0
+english_twin,English twin,30,2.52,"read speech, 16 kHz",2,4,70,66.8,20.4,1.72,10.5,2.07,27.6

@@ -1,5 +1,8 @@
 # NepDiar
 
+Do the open-source speaker diarization systems that work on English meetings hold up on Nepali?
+This repo is the benchmark that checks, and everything needed to rerun it.
+
 Code, references and system outputs for a speaker diarization benchmark. Five open-source systems
 that run on a laptop are scored on the 16-meeting AMI test set. Then the same systems, with the
 settings picked on AMI dev and nothing changed, are scored on Nepali:

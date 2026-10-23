@@ -41,13 +41,13 @@ them and resample to 16 kHz.
 
 ## Known limits of the reference
 
-- **Pauses inside segments.** The boundaries come from transcription segmentation, not from a
+- Pauses inside segments. The boundaries come from transcription segmentation, not from a
   diarization annotation, so a segment includes pauses inside an utterance. An energy detector on
   each side's own channel calls 17.5% of reference speech time silence (threshold -50 dBFS, 25 ms
   frames). This pads the overlap. If each side's segments are cut down to the frames its own
   channel's energy detector marks as speech, speech falls by 11% and overlap by 38%. Overlap then
   becomes 7.7% of speech. That tighter version is in `rttm_tight/`.
-- **Sync between the sides.** The IndicVoices paper says each role-play call joined two people
+- Sync between the sides. The IndicVoices paper says each role-play call joined two people
   on one telephone bridge and recorded the call. Both sides of every call have exactly the same
   length, which also points to one recording of the call, so offset 0 is the most likely value.
   The sync can't be checked from the audio: there is no crosstalk between the channels, and an
@@ -55,7 +55,7 @@ them and resample to 16 kHz.
   Four calls behave differently from the in-sync recordings and are less certain:
   `0567e43d-0fc2-4a77-be64-ed73f905fa99`, `1fca12e8-6d74-4d28-b8da-e1ae4a050bef`,
   `3a87e195-ad44-44d1-813f-a803c244473d` and `4af13f83-fe70-40c2-a6d8-592f76031ca2`.
-- **Telephone audio.** The audio is 8 kHz telephone speech.
+- The audio is 8 kHz telephone speech.
 
 ## Source and licence
 

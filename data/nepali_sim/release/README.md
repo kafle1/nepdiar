@@ -48,15 +48,15 @@ The `stats`, `plan` and `rooms` stages remake the manifests from scratch. They n
 
 ## How it was made
 
-1. **Speaker check.** 461 OpenSLR 54 speaker IDs had at least 50 files in the four parts. Each utterance got an energy-based trim and a WeSpeaker ResNet34 embedding.
+1. Speaker check. 461 OpenSLR 54 speaker IDs had at least 50 files in the four parts. Each utterance got an energy-based trim and a WeSpeaker ResNet34 embedding.
    - 14 IDs were dropped as doubtful. 5 had more than 10% of their utterances closer to another speaker. 12 split into two distinct voice groups (some IDs failed both checks). No ID looked like a duplicate of another.
    - 262 more IDs had under 150 s of usable speech, and 185 IDs remained. 90 of those were drawn at random.
-2. **Simulation.** This follows Landini et al. (2022). Each speaker's trimmed speech regions are shuffled into one turn order.
+2. Simulation. This follows Landini et al. (2022). Each speaker's trimmed speech regions are shuffled into one turn order.
    - A turn after the same speaker gets a pause drawn from AMI same-speaker pauses.
    - A speaker change is a pause with probability 0.389 and an overlap otherwise, each drawn from AMI. Values of 7 s or more are dropped, as in their code.
    - The per-speaker speech budget is tuned so each conversation lasts about 300 s.
    - Every segment is brought to -26 dBFS speech RMS and gets a 10 ms fade.
-3. **Reverb and noise.**
+3. Reverb and noise.
    - Rooms are 3 to 8 by 3 to 6 by 2.5 to 3.5 m. A phone-height mic is at least 1 m from the walls, and the speakers sit 0.5 to 2.5 m from it.
    - The image method is calibrated so the measured RT60 matches the drawn target.
    - SNR is measured against the reverberant speech over the reference speech frames.

@@ -2,13 +2,11 @@
 
 30 simulated conversations of about 5 minutes (2.52 h in all), 10 each with 2, 3 and 4 speakers, in two conditions: clean, and reverb + noise. Each conversation is the twin of the NepDiar-Sim conversation with the same number (`engsim_3spk_04` is the twin of `nepsim_3spk_04`). The twin keeps everything from the Nepali plan except the voices: speaker count, turn order, every pause and overlap draw, the room, the room impulse responses, the noise clip, its start offset and the SNR. The voices are read English from LibriSpeech dev-clean and test-clean.
 
-The twin exists to ask one question: does a diarization system do worse on Nepali than on English when the recording setup is held fixed?
-
-No audio is shipped here. You rebuild it from LibriSpeech and DEMAND with the manifests, and the rebuild is bit-exact (compare with `wav_sha256/`).
+It is there to test whether a diarization system does worse on Nepali than on English when the recording setup is held fixed. No audio is shipped. You rebuild it from LibriSpeech and DEMAND with the manifests, bit-exact (compare with `wav_sha256/`).
 
 ## Licence
 
-This release (manifests, references, room responses and checksums) is CC BY-SA 4.0, the same as NepDiar-Sim, because it reuses NepDiar-Sim's room responses, noise plan and timing. The code is AGPL-3.0 in the repository. The sources keep their own licences:
+This release (manifests, references, room responses and checksums) is CC BY-SA 4.0 like NepDiar-Sim, since it reuses its room responses, noise plan and timing. The code is AGPL-3.0. The sources keep their own licences:
 
 - LibriSpeech (OpenSLR 12), CC BY 4.0. Panayotov, Chen, Povey and Khudanpur, "LibriSpeech: an ASR corpus based on public domain audio books", ICASSP 2015.
 - DEMAND, CC BY 4.0. Thiemann, Ito and Vincent, Zenodo record 1227121.
@@ -51,7 +49,7 @@ python make_english_sim.py render_rn --out . --libri /path/to/librispeech_folder
 
 ## How close the twin is
 
-From the reference RTTMs, pooled over the 30 conversations, with the definitions of the NepDiar paper's turn table (`paper/analysis/turn_stats_table.py`): segments sorted by start, back-to-back segments of one speaker merged into a turn, and a speaker change counted each time a new turn starts, per minute of speech (not of audio). The reverb + noise condition uses the same references, so its numbers are identical.
+From the reference RTTMs, pooled over the 30 conversations, using the turn definitions in `paper/analysis/turn_stats_table.py`: back-to-back segments of one speaker form a turn, and speaker changes are counted per minute of speech (not of audio). Reverb + noise uses the same references, so its numbers are the same.
 
 | | speech % | overlap % | speaker changes per speech min | median segment (s) | segments under 1 s | median turn (s) |
 |---|---|---|---|---|---|---|
@@ -64,8 +62,8 @@ From the reference RTTMs, pooled over the 30 conversations, with the definitions
 
 - Version 1.0, 2026-10-16. Report errors as GitHub issues on the NepDiar repository; fixes get a new version number and a changelog line here.
 - Source: LibriSpeech dev-clean and test-clean (40 speakers each, 80 in all), CC BY 4.0. No other English speech is used.
-- Speaker sex is set by design, from LibriSpeech `SPEAKERS.TXT`: 2-speaker conversations get 1 female + 1 male, 4-speaker ones 2 + 2, and 3-speaker ones 2 female + 1 male in odd-numbered conversations (`_01`, `_03`, ...) and 1 female + 2 male in even ones. Slots: 45 female, 45 male.
-- 70 of the 80 speakers are used. 20 of them appear in two conversations each (never twice in one), so twin conversations are not fully independent. The repository's pair test resamples them in linked groups as a sensitivity check.
+- Speaker sex is set by design (see How it was made, step 2). In 3-speaker conversations, odd-numbered ones (`_01`, `_03`, ...) get 2 female + 1 male and even ones 1 female + 2 male.
+- 20 speakers appear in two conversations, so twin conversations are not fully independent. The repository's pair test resamples them in linked groups as a sensitivity check.
 - The WeSpeaker speaker check used to clean OpenSLR 54 was not applied to the LibriSpeech speakers. LibriSpeech speaker labels are taken as given; only clipping (0.1% or more clipped samples, 3 utterances) and the energy trim filter anything.
 
 ## Limits

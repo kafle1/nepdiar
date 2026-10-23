@@ -1,47 +1,43 @@
 # NepDiar
 
 Do the open-source speaker diarization systems that work on English meetings hold up on Nepali?
-This repo is the benchmark that checks, and everything needed to rerun it.
+This repo is the benchmark that checks, with the code, references and system outputs to rerun it.
 
-Code, references and system outputs for a speaker diarization benchmark. Five open-source systems
-that run on a laptop are scored on the 16-meeting AMI test set. Then the same systems, with the
-settings picked on AMI dev and nothing changed, are scored on Nepali:
+Five systems (six setups) that run on a laptop are tuned on AMI dev, checked on the 16-meeting AMI
+test set, then run unchanged on:
 
-- **Indic DiarBench, Nepali**: 25 clips of online-meeting conversation, 3 to 6 speakers.
-- **IndicVoices, Nepali phone calls**: 92 two-party calls (5.07 h), no speaker in more than one call.
-- **NepDiar-Sim**: 30 simulated Nepali conversations (2, 3 and 4 speakers) built from OpenSLR 54
-  read speech, in a clean and a reverb + noise condition. It is rebuilt from the manifests in
-  `data/nepali_sim/`, see below.
-- **English twin**: the same 30 conversation plans (turn order, pauses, overlaps, rooms, noise, SNR)
-  with LibriSpeech voices instead of Nepali ones. Comparing each Nepali conversation with its twin
-  asks whether a system does worse on Nepali when the recording setup is held fixed.
+- Indic DiarBench, Nepali: 25 clips of online-meeting conversation, 3 to 6 speakers.
+- IndicVoices, Nepali phone calls: 92 two-party calls (5.07 h), no speaker in more than one call.
+- NepDiar-Sim: 30 simulated Nepali conversations (2, 3 and 4 speakers) built from OpenSLR 54 read
+  speech, in a clean and a reverb + noise condition.
+- English twin: the same 30 conversation plans (turn order, pauses, overlaps, rooms, noise, SNR) with
+  LibriSpeech voices instead of Nepali ones. Comparing each Nepali conversation with its twin holds
+  the recording setup fixed.
 
-Scoring is DER and JER from `pyannote.metrics`, with no collar and with a 0.25 s collar, overlap
-scored, inside each set's UEM. We report pooled DER and per-recording means with 95% bootstrap
-intervals. The main test, committed in `ANALYSIS_PLAN.md` (commit ea7664f) before any simulated set was scored, is the paired DER difference
-between each NepDiar-Sim conversation and its English twin, per configuration, with a 10,000-resample
-bootstrap and Holm's correction (`scripts/sim_pair_test.py`).
+Scoring is DER and JER from `pyannote.metrics` (no collar and 0.25 s collar, overlap scored, inside
+each set's UEM). The main test, fixed in `ANALYSIS_PLAN.md` (commit ea7664f) before any simulated set
+was scored, is the paired DER difference between each NepDiar-Sim conversation and its English twin,
+per configuration, with a 10,000-resample bootstrap and Holm's correction (`scripts/sim_pair_test.py`).
 
-## Results in brief
+## Results
 
-DER is diarization error rate, lower is better. All numbers below are at no collar.
+DER, no collar, lower is better.
 
-- On AMI test, the released pyannote 3.1 pipeline (S4) scores 18.81% pooled DER against its
-  published 18.8%, which checks the scoring chain (`results/corpus_der_ami_test.txt`).
-- On clean audio, four configurations make more errors on the Nepali conversations than on their
-  English twins: S1 by 6.92 points, S5 by 9.75, S3 by 11.91 and S4 by 13.79 (mean paired
+- AMI test: S4 (pyannote 3.1) scores 18.81% pooled DER against its published 18.8%, which checks
+  the scoring chain (`results/corpus_der_ami_test.txt`).
+- Clean simulated audio: four configurations do worse on Nepali than on the English twin, S1 by
+  6.92 points, S5 by 9.75, S3 by 11.91 and S4 by 13.79 (mean paired
   difference over 30 pairs, Holm-corrected, `results/sim_pair_test.csv`). S2a and S2b show no
   clear difference.
 - Post hoc, most of that gap is missed speech near the edges of the simulated reference's speech,
-  and its size depends on how the reference draws those edges
-  (`results/sim_reference_sensitivity.csv`). It is a gap on this simulated set, not proof that
-  Nepali speech is harder to diarize.
-- On the two real Nepali sets, reported descriptively, every configuration confuses speakers more
-  on Indic DiarBench than on AMI test (`results/corpus_der_nepali_real.txt`).
+  and its size depends on how those edges are drawn (`results/sim_reference_sensitivity.csv`). It
+  does not show that Nepali speech is harder to diarize.
+- Real Nepali sets (descriptive only): every configuration confuses speakers more on Indic
+  DiarBench than on AMI test (`results/corpus_der_nepali_real.txt`).
 
-## Paper and citation
+## Citation
 
-A paper describing this benchmark is under review. It uses version 1.0.1 of this repo, archived at
+The paper is under review and uses version 1.0.1 of this repo, archived at
 https://doi.org/10.5281/zenodo.23412673. The concept DOI https://doi.org/10.5281/zenodo.23412010
 always points to the latest version. To cite the code and data, use `CITATION.cff`.
 
@@ -60,8 +56,8 @@ Each system also has an "oracle k" run that is given the true number of speakers
 
 ## Setup
 
-Python 3.12, [uv](https://docs.astral.sh/uv/), and ffmpeg 4 on your PATH (or point `FFMPEG` at
-the binary; `ffprobe` must sit next to it). Results were made on an Apple M3 Pro.
+Python 3.12, [uv](https://docs.astral.sh/uv/), and ffmpeg 4 on PATH (or set `FFMPEG`, with `ffprobe`
+next to it). Results were made on an Apple M3 Pro.
 
 ```
 uv venv .venv --python 3.12            && uv pip install --python .venv -r requirements.txt
@@ -71,53 +67,43 @@ uv venv .venv-sim --python 3.12        && uv pip install --python .venv-sim -r r
 scripts/get_models.sh
 ```
 
-- `.venv`: S1 to S3, scoring, summaries, data prep and the NepDiar-Sim renderer.
-- `.venv-pyannote3`: pyannote.audio 3.3.2 for S4.
-- `.venv-pyannote`: pyannote.audio 4.0.7 for S5.
-- `.venv-sim`: pyroomacoustics, only for the `rooms` stage of NepDiar-Sim.
+`.venv` runs S1 to S3 and everything else, `.venv-pyannote3` is pyannote.audio 3.3.2 (S4),
+`.venv-pyannote` is pyannote.audio 4.0.7 (S5), and `.venv-sim` is pyroomacoustics for the NepDiar-Sim
+`rooms` stage. `scripts/get_models.sh` fetches and sha256-checks the ONNX models from the sherpa-onnx
+releases and writes the derived copies S1 and S3 use.
 
-`scripts/get_models.sh` downloads the segmentation, embedding and Silero VAD ONNX files from the
-sherpa-onnx releases, checks their sha256, and writes the two derived copies (the CMN-flagged
-embedding model for S1, and the frame-output model plus numpy head for S3). It installs
-`onnx==1.23.2` into `.venv` for that step if it is missing, and skips any file already present
-with the right hash.
-
-S4 and S5 are gated on Hugging Face. Accept the terms on the model pages for
-`pyannote/speaker-diarization-3.1`, `pyannote/segmentation-3.0` and
-`pyannote/speaker-diarization-community-1`, then either set `HF_TOKEN` or run
-`huggingface-cli login`. The runner reads the token from `--hf-token`, `HF_TOKEN` or the cached
-login, and never prints it.
+S4 and S5 are gated on Hugging Face. Accept the terms for `pyannote/speaker-diarization-3.1`,
+`pyannote/segmentation-3.0` and `pyannote/speaker-diarization-community-1`, then set `HF_TOKEN`, run
+`huggingface-cli login`, or pass `--hf-token`.
 
 ## Data
 
-No audio is in this repo. Everything goes under `data/`, which the scripts expect.
+No audio is in this repo. It goes under `data/`.
 
-**AMI**, Mix-Headset, the BUT test (16) and dev (18) splits. References, UEMs and meeting lists
-are in `ref/ami/`, from github.com/BUTSpeechFIT/AMI-diarization-setup at commit
+AMI, Mix-Headset, BUT test (16) and dev (18) splits. References, UEMs and meeting lists in
+`ref/ami/` are from github.com/BUTSpeechFIT/AMI-diarization-setup at commit
 `2509d8933721023fab4def2618aabd5c28eb82e9` (`only_words` references). Audio comes from the
-Edinburgh mirror and is checked against `ref/ami/audio.sha256`:
+Edinburgh mirror, checked against `ref/ami/audio.sha256`:
 
 ```
 .venv/bin/python scripts/get_ami.py
 .venv/bin/python scripts/get_ami.py --meetings-file ref/ami/dev.meetings.txt
 ```
 
-**Indic DiarBench, Nepali.** Download `Nepali/test-00000-of-00001.parquet` from
-https://huggingface.co/datasets/sarvamai/indic-diarbench and save it as
-`data/nepali_real/diarbench/Nepali_test-00000-of-00001.parquet`, then convert it. The references this writes are already in the repo, so you can check them with
-`git diff`.
+Indic DiarBench, Nepali: download `Nepali/test-00000-of-00001.parquet` from
+https://huggingface.co/datasets/sarvamai/indic-diarbench as
+`data/nepali_real/diarbench/Nepali_test-00000-of-00001.parquet` and convert it (`git diff` checks
+the references it writes):
 
 ```
 uv run --no-project --with pyarrow --with numpy --with soundfile python -I scripts/real_nepali/prep_diarbench.py
 ```
 
-**IndicVoices, Nepali.** The archives are on the IndicVoices release server (see
-https://huggingface.co/datasets/ai4bharat/IndicVoices). Only the "Conversation" files are kept,
-streamed without saving the archive. The 92 calls used are in `data/nepali_real/indicvoices/calls.txt`
-(91 from v1 train, 1 from v2 valid). They are the calls with both sides present, kept in id order only
-if neither speaker was in an earlier kept call. The cleaned two-party references (speakers A and B, no
-speaker ids) are shipped on their own in `data/indicvoices_ne_calls/`, and the prep script rebuilds
-them from the official release.
+IndicVoices, Nepali (https://huggingface.co/datasets/ai4bharat/IndicVoices): only the
+"Conversation" files are streamed out of the release archives. The v1 train archive is 23.7 GB. The
+92 calls are in `data/nepali_real/indicvoices/calls.txt` (91 from v1 train, 1 from v2 valid). The
+cleaned references also ship on their own in `data/indicvoices_ne_calls/`, with how the calls were
+picked.
 
 ```
 U=https://iv-release.objectstore.e2enetworks.net/dmu_release
@@ -126,26 +112,20 @@ U=https://iv-release.objectstore.e2enetworks.net/dmu_release
 .venv/bin/python -I scripts/real_nepali/prep_indicvoices.py data/nepali_real/indicvoices/raw_v1_train data/nepali_real/indicvoices/raw_v2_valid
 ```
 
-The v1 train archive is 23.7 GB.
-
 ## Rebuild NepDiar-Sim
 
-`data/nepali_sim/` holds the reference RTTMs and UEMs, `placement.tsv` (every speech segment: source
-file, start, end, placement, gain), `manifest_rn.tsv` (room, positions, noise, SNR per
-conversation), `turn_stats.json`, the speaker check output, `sources.sha256` for the source zips, and
-sha256 lists for the rebuilt audio. `data/nepali_sim/release/` is the same set packaged on its own,
-with its own README.
+`data/nepali_sim/` has the references, manifests and checksums. `data/nepali_sim/release/` is the
+standalone package.
 
 1. Put `asr_nepali_0.zip` to `asr_nepali_3.zip` from https://www.openslr.org/54/ in
    `data/slr54/zips/`, and `DKITCHEN_16k.zip`, `DLIVING_16k.zip`, `DWASHING_16k.zip`,
    `OOFFICE_16k.zip`, `OHALLWAY_16k.zip` from https://zenodo.org/records/1227121 in
-   `data/demand/zips/`. Do not unzip them. Check all nine from the repo root with
-   `shasum -a 256 -c data/nepali_sim/sources.sha256`.
-2. Put the room impulse responses in place. They ship in the release folder, and they are the ones
-   the published checksums were made with:
+   `data/demand/zips/`. Leave them zipped. Check them from the repo root:
+   `shasum -a 256 -c data/nepali_sim/sources.sha256`
+2. Copy in the room impulse responses used for the published checksums:
    `cp data/nepali_sim/release/rirs.npz data/nepali_sim/rirs.npz`
-   The `rooms` stage remakes them (and an identical `manifest_rn.tsv`) from fixed seeds with
-   pyroomacoustics 0.10.1: `.venv-sim/bin/python scripts/make_nepali_sim.py rooms`
+   (or remake them from fixed seeds with pyroomacoustics 0.10.1:
+   `.venv-sim/bin/python scripts/make_nepali_sim.py rooms`).
 3. Render both conditions:
    ```
    .venv/bin/python scripts/make_nepali_sim.py render_clean
@@ -154,20 +134,18 @@ with its own README.
 4. Compare `data/nepali_sim/wav/SHA256SUMS` with `data/nepali_sim/wav.SHA256SUMS`, and
    `wav_rn/SHA256SUMS` with `wav_rn.SHA256SUMS`.
 
-The `stats`, `plan` and `check_nepali_speakers.py` stages remake the manifests from scratch and are
-only needed to change the design.
+The `stats`, `plan` and `check_nepali_speakers.py` stages remake the manifests, only needed to change
+the design.
 
 ## Rebuild the English twin
 
-`data/english_sim/` holds the references, `placement.tsv`, `manifest_rn.tsv`, the trimmed
-LibriSpeech regions and the audio checksums. `data/english_sim/release/` is the same set packaged
-on its own, with its own README.
+`data/english_sim/` has the references, manifests, trimmed LibriSpeech regions and audio checksums.
+`data/english_sim/release/` is the standalone package.
 
 1. Download `dev-clean.tar.gz` and `test-clean.tar.gz` from https://www.openslr.org/12/ and unpack
    both into `data/librispeech/`, so it holds `LibriSpeech/dev-clean`, `LibriSpeech/test-clean` and
-   `LibriSpeech/SPEAKERS.TXT`. The DEMAND zips are the ones from the NepDiar-Sim steps.
-2. Make the NepDiar-Sim room responses (step 2 above), then rekey them for the twin. This also
-   rewrites the manifests, byte for byte the same:
+   `LibriSpeech/SPEAKERS.TXT`. The DEMAND zips are the same as above.
+2. Do NepDiar-Sim step 2, then rekey the room responses (this rewrites identical manifests):
    `.venv/bin/python scripts/make_english_sim.py plan`
 3. Render both conditions:
    ```
@@ -179,10 +157,10 @@ on its own, with its own README.
 
 ## Rerun and score
 
-Every runner skips a recording whose RTTM already exists, so delete the matching
-`results/raw/.../*_rttm/` folder first if you want a fresh run. Outputs go to `results/raw/`.
+Runners skip any recording whose RTTM already exists, so delete the matching
+`results/raw/.../*_rttm/` folder for a fresh run. Outputs go to `results/raw/`.
 
-**Settings picked on AMI dev** (dev table):
+Settings picked on AMI dev:
 
 ```
 .venv/bin/python scripts/vad_sweep_dev.py            # S2a WebRTC VAD
@@ -193,7 +171,7 @@ M=ref/ami/dev.meetings.txt O=results/raw/ami_dev_full DS=ami_dev scripts/sweep_s
 .venv/bin/python scripts/sweep_pyannote_style_dev.py  # S3 clustering
 ```
 
-**AMI test** (pooled, per-meeting and components tables):
+AMI test:
 
 ```
 scripts/run_ami_rerun.sh test spectral
@@ -216,11 +194,11 @@ scripts/score_ami_test.sh                                   # results/summary.cs
 .venv/bin/python paper/make_tables.py                        # paper/tables/*.tex
 ```
 
-**Speed** (one thread, idle machine, 3 AMI test meetings): `scripts/run_timing_idle.sh` and
+Speed (one thread, idle machine, 3 AMI test meetings): `scripts/run_timing_idle.sh` and
 `scripts/run_timing_community1.sh`. Each checks its RTTMs against the test run.
 
-**Real Nepali** (DATASET is `indic_diarbench_ne` or `indicvoices_ne_calls`, GROUP is `sherpa`,
-`spectral`, `silero`, `pyannote_style` or `pyannote31`):
+Real Nepali. DATASET is `indic_diarbench_ne` or `indicvoices_ne_calls`. GROUP is `sherpa`,
+`spectral`, `silero`, `pyannote_style` or `pyannote31`.
 
 ```
 scripts/real_nepali/run_real.sh DATASET GROUP
@@ -229,7 +207,7 @@ scripts/real_nepali/score_real.sh          # results/summary_nepali_real.csv, re
 .venv/bin/python scripts/real_nepali/report_real.py
 ```
 
-**NepDiar-Sim** (DATASET is `nepali_sim` for clean or `nepali_sim_rn` for reverb + noise):
+NepDiar-Sim. DATASET is `nepali_sim` (clean) or `nepali_sim_rn` (reverb + noise).
 
 ```
 scripts/run_nepali_sim.sh DATASET GROUP     # or scripts/run_nepali_sim_all.sh for every group in three queues
@@ -238,7 +216,7 @@ scripts/score_nepali_sim.sh                 # results/summary_nepali_sim.csv, re
 .venv/bin/python scripts/nepali_sim_report.py
 ```
 
-**English twin** (DATASET is `english_sim` or `english_sim_rn`, GROUP as above plus `community1`):
+English twin. DATASET is `english_sim` or `english_sim_rn`, GROUP as above plus `community1`.
 
 ```
 scripts/run_english_sim.sh DATASET GROUP    # or scripts/run_english_sim_all.sh for everything
@@ -249,33 +227,23 @@ scripts/score_english_sim.sh                # results/summary_english_sim.csv, r
 
 ## Layout
 
-- `scripts/`: every script the results depend on. `scripts/real_nepali/` covers the two real sets.
-- `ref/ami/`: AMI references, UEMs, split lists and audio checksums.
-- `data/nepali_sim/`, `data/english_sim/`, `data/nepali_real/diarbench/`: references and manifests
-  we can share. `data/nepali_real/indicvoices/` has only the call list, and
-  `data/indicvoices_ne_calls/` the cleaned call references.
-- `results/raw/<dataset>/<system>_rttm/`: system output RTTMs. `results/raw/**/scores_*.csv`:
-  per-recording scores. `results/raw/**/*_timing.csv`: run times. `results/summary*.csv`,
-  `results/corpus_der_*.txt`: the tables. `results/raw/ami_dev*`: dev tuning runs and sweeps.
-- `paper/make_tables.py`: builds the LaTeX tables from `results/`.
-- `paper/analysis/`: the small scripts behind single numbers in the paper (the turn statistics
-  table, transcript tag counts, AMI paired comparisons), each with its output beside it.
+System RTTMs are in `results/raw/<dataset>/<system>_rttm/`, with per-recording scores and run times
+nearby. The tables are `results/summary*.csv` and `results/corpus_der_*.txt`. `paper/analysis/` has
+the small scripts behind single numbers in the paper. S3's embedding caches (`results/cache/`) are
+left out, the `extract` step rebuilds them.
 
-Embedding caches from S3 (`results/cache/`) are left out, they are large and rebuilt by the
-`extract` step.
+## Licences
 
-## Data and licences
+The code is under the GNU AGPL 3.0 (`LICENSE`). Data files carry their source's licence, listed
+with citations in `DATA-LICENSES.txt`:
 
-The code is under the GNU AGPL 3.0, see `LICENSE`. The data files in this repo carry their source's
-licence, listed with citations in `DATA-LICENSES.txt`:
-
-- AMI references and UEMs: AMI annotations are CC BY 4.0. The BUT AMI-diarization-setup repo they
-  come from is Apache 2.0, its licence is kept in `ref/ami/LICENSE-AMI-diarization-setup`.
+- AMI references and UEMs: CC BY 4.0 (the BUT repo is Apache 2.0,
+  `ref/ami/LICENSE-AMI-diarization-setup`).
 - Indic DiarBench references: CC BY 4.0.
-- IndicVoices call references (`data/indicvoices_ne_calls/`): CC BY 4.0, like IndicVoices.
-- NepDiar-Sim manifests, references and checksums: derived from OpenSLR 54, so CC BY-SA 4.0.
-- English twin manifests, references and checksums: LibriSpeech voices (CC BY 4.0) on NepDiar-Sim's
-  rooms, noise plan and timing, so CC BY-SA 4.0 like NepDiar-Sim.
-- System output RTTMs and scores on each set follow that set's licence.
+- IndicVoices call references (`data/indicvoices_ne_calls/`): CC BY 4.0.
+- NepDiar-Sim manifests, references and checksums: CC BY-SA 4.0 (derived from OpenSLR 54).
+- English twin manifests, references and checksums: CC BY-SA 4.0 (LibriSpeech is CC BY 4.0, the
+  rooms, noise plan and timing are NepDiar-Sim's).
+- System outputs and scores follow the licence of the set they were run on.
 
-The audio itself is not redistributed. Get it from the official sources above under their terms.
+The audio is not redistributed. Get it from the sources above under their terms.

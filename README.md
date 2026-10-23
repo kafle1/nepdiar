@@ -22,8 +22,28 @@ intervals. The main test, committed in `ANALYSIS_PLAN.md` (commit ea7664f) befor
 between each NepDiar-Sim conversation and its English twin, per configuration, with a 10,000-resample
 bootstrap and Holm's correction (`scripts/sim_pair_test.py`).
 
-Archived on Zenodo at https://doi.org/10.5281/zenodo.23412010 (this DOI always points to the latest
-version). To cite it, use `CITATION.cff`.
+## Results in brief
+
+DER is diarization error rate, lower is better. All numbers below are at no collar.
+
+- On AMI test, the released pyannote 3.1 pipeline (S4) scores 18.81% pooled DER against its
+  published 18.8%, which checks the scoring chain (`results/corpus_der_ami_test.txt`).
+- On clean audio, four configurations make more errors on the Nepali conversations than on their
+  English twins: S1 by 6.92 points, S5 by 9.75, S3 by 11.91 and S4 by 13.79 (mean paired
+  difference over 30 pairs, Holm-corrected, `results/sim_pair_test.csv`). S2a and S2b show no
+  clear difference.
+- Post hoc, most of that gap is missed speech near the edges of the simulated reference's speech,
+  and its size depends on how the reference draws those edges
+  (`results/sim_reference_sensitivity.csv`). It is a gap on this simulated set, not proof that
+  Nepali speech is harder to diarize.
+- On the two real Nepali sets, reported descriptively, every configuration confuses speakers more
+  on Indic DiarBench than on AMI test (`results/corpus_der_nepali_real.txt`).
+
+## Paper and citation
+
+A paper describing this benchmark is under review. It uses version 1.0.1 of this repo, archived at
+https://doi.org/10.5281/zenodo.23412673. The concept DOI https://doi.org/10.5281/zenodo.23412010
+always points to the latest version. To cite the code and data, use `CITATION.cff`.
 
 ## Systems
 

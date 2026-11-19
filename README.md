@@ -37,6 +37,7 @@ DER, no collar, lower is better.
 
 ## Citation
 
+The paper as submitted is in [`paper/main.pdf`](paper/main.pdf).
 The paper is under review and uses version 1.0.1 of this repo, archived at
 https://doi.org/10.5281/zenodo.23412673. The concept DOI https://doi.org/10.5281/zenodo.23412010
 always points to the latest version. To cite the code and data, use `CITATION.cff`.
